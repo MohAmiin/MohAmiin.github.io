@@ -1,3 +1,5 @@
+import ThemeToggle from '../components/theme-toggle';
+
 const experience = [
   { date: '2022 — Present', title: 'Air Traffic Controller', place: 'Berbera International Airport (HCMI)', detail: 'Aerodrome control, aircraft sequencing and safe, efficient runway operations.' },
   { date: '2022', title: 'Tower On-the-Job Training', place: 'Hargeisa Airport (HCMH)', detail: 'Practical tower training and operational familiarisation.' },
@@ -20,7 +22,7 @@ export default function Home() {
     <header className="topbar container">
       <a className="brand" href="#home">MA<span className="brand-dot">.</span></a>
       <nav aria-label="Primary navigation"><a href="#about">About</a><a href="#experience">Aviation</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
-      <a className="nav-cv" href="/cv.pdf" download>Download CV ↗</a>
+      <div className="nav-actions"><ThemeToggle/><a className="nav-cv" href="/cv.pdf" download>Download CV ↗</a></div>
     </header>
     <section id="home" className="hero">
       <div className="hero-grid container">
