@@ -1,1 +1,1 @@
-export default function SiteFooter(){return <footer className="container footer"><span>© {new Date().getFullYear()} Mohamed Amiin</span><span>AVIATION × TECHNOLOGY · SOMALILAND</span></footer>}
+export default function SiteFooter(){return <footer className="container footer"><span>© {new Date().getFullYear()} Mohamed Amiin</span><span>REFERENCES AVAILABLE ON REQUEST · <a href="/relax">SIT IN THE MEADOW ↗</a></span></footer>}
