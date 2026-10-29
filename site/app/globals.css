@@ -70,7 +70,7 @@ html[data-theme="light"] .portrait-hero .photo-tag{background:#e2e8e1;color:#203
 
 /* Midnight identity: warm aviation amber, cream serif, restrained surfaces */
 
-:root{--bg:#0B0F1A;--bg2:#131929;--surface:#1C2438;--ink:#F2EDD8;--soft:#C9C3AE;--muted:#8696B1;--accent:#F5A623;--line:#252F47;--on-accent:#1A1206;--whatsapp:#25A866;--sky-top:#05070D;--sky-mid:#0B0F1A;--sky-glow:#1B2440;color-scheme:dark}
+:root{--bg:#0B0F1A;--bg2:#131929;--surface:#1C2438;--ink:#F2EDD8;--soft:#C9C3AE;--muted:#8696B1;--accent:#F5A623;--line:#252F47;--on-accent:#1A1206;--whatsapp:#1B7F4A;--sky-top:#05070D;--sky-mid:#0B0F1A;--sky-glow:#1B2440;color-scheme:dark}
 html[data-theme="dark"]{--bg:#0B0F1A;--bg2:#131929;--ink:#F2EDD8;--muted:#8696B1;--accent:#F5A623;--line:#252F47}
 html[data-theme="light"]{--bg:#EEF1F6;--bg2:#FFFFFF;--surface:#E2E7EF;--ink:#141A2B;--soft:#333C52;--muted:#56617A;--accent:#A86400;--line:#D2D9E5;--on-accent:#fff;--sky-top:#9FB3D6;--sky-mid:#C9D5EA;--sky-glow:#F6D3AE;--toggle-bg:#fff;color-scheme:light}
 body{font-family:'DM Sans',sans-serif}
@@ -292,3 +292,10 @@ html[data-theme="light"] .case-visual .shot-frame,html[data-theme="light"] .feat
 html[data-theme="light"] .relax-chess{background:linear-gradient(180deg,#7487aa 0,#c3cbdb 70px,var(--bg) 240px)}
 @media(max-width:850px){.chess-grid{grid-template-columns:1fr}.chess-photo{max-width:640px}}
 @media(max-width:520px){.chess-photo{margin-left:12px;width:calc(100% - 12px)}}
+
+/* Homepage hero: outdoor portrait (4:5) with a subtle amber frame */
+.hero-portrait{max-width:420px}
+.hero-portrait-frame{border-color:color-mix(in srgb,var(--accent) 65%,transparent);box-shadow:12px 12px 0 -6px var(--sky-mid),12px 12px 0 -5px color-mix(in srgb,var(--accent) 45%,transparent),0 34px 70px -38px #000c}
+.hero-portrait-frame::after{background:radial-gradient(ellipse at 85% 0%,#ffc86b14,transparent 55%),linear-gradient(180deg,transparent 78%,#0b0f1a40)}
+html[data-theme="light"] .hero-portrait-frame{box-shadow:12px 12px 0 -6px var(--sky-mid),12px 12px 0 -5px color-mix(in srgb,var(--accent) 45%,transparent),0 30px 60px -38px #14203a80}
+html[data-theme="light"] .hero-portrait-frame::after{background:radial-gradient(ellipse at 85% 0%,#ffc86b14,transparent 55%)}
