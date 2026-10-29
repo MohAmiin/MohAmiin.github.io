@@ -169,7 +169,8 @@ html[data-theme="light"] .flight-plane{fill:#fff;filter:drop-shadow(0 1px 4px #1
 .framed-photo{position:relative;margin:0}
 .framed-photo img{display:block;width:100%;height:auto;border:1px solid var(--line);box-shadow:0 30px 70px -38px #000}
 .framed-photo figcaption{font:11px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:14px}
-.photo-trim-bottom img{aspect-ratio:896/1015;object-fit:cover;object-position:top}
+.photo-wide{margin-top:clamp(40px,6vw,64px)}
+.photo-wide img{aspect-ratio:16/9;object-fit:cover;object-position:center}
 .page-section{position:relative;padding-top:clamp(70px,9vw,120px)}
 .page-section h2,.detail-page .page-section h2{margin-top:0}
 .split-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,80px);align-items:center}
