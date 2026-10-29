@@ -276,3 +276,19 @@ html[data-theme="light"] .case-visual .shot-frame,html[data-theme="light"] .feat
 .case-context .case-card-no{margin-bottom:8px}
 .demo-note{color:var(--ink);border-top:1px solid var(--line);padding-top:16px;margin-top:36px}
 .featured-solo{grid-template-columns:1fr}
+
+/* Off Duty: chess */
+.relax-chess{position:relative;padding:clamp(80px,10vw,130px) 0 clamp(90px,11vw,140px);background:radial-gradient(ellipse at 80% 20%,color-mix(in srgb,var(--accent) 7%,transparent),transparent 55%),var(--bg)}
+.relax-chess::before{content:'';position:absolute;inset:0 0 auto;height:6px;background:repeating-linear-gradient(90deg,var(--accent) 0 24px,transparent 24px 48px);opacity:.35}
+.chess-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(36px,6vw,80px);align-items:center}
+.chess-copy h2{margin:16px 0 22px}
+.chess-lead{font:700 italic clamp(22px,2.4vw,28px)/1.35 'Playfair Display',serif;color:var(--ink);margin:0 0 14px}
+.chess-copy p:not(.eyebrow):not(.chess-lead){color:var(--muted);font-size:17px;max-width:440px}
+.chess-files{display:grid;grid-template-columns:repeat(8,1fr);max-width:320px;margin-top:34px;border-top:1px solid var(--line)}
+.chess-files span{font:11px 'DM Mono',monospace;color:var(--muted);text-align:center;padding-top:10px}
+.chess-files span:nth-child(odd){color:var(--accent)}
+.chess-photo{width:100%}
+.chess-photo img{aspect-ratio:auto}
+html[data-theme="light"] .relax-chess{background:linear-gradient(180deg,#7487aa 0,#c3cbdb 70px,var(--bg) 240px)}
+@media(max-width:850px){.chess-grid{grid-template-columns:1fr}.chess-photo{max-width:640px}}
+@media(max-width:520px){.chess-photo{margin-left:12px;width:calc(100% - 12px)}}
