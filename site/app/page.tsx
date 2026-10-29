@@ -1,3 +1,4 @@
+import FlightIntro from '../components/flight-intro';
 const experience = [
   { date: '2022 — Present', title: 'Air Traffic Controller', place: 'Berbera International Airport (HCMI)', detail: 'Aerodrome control, aircraft sequencing and safe, efficient runway operations.' },
   { date: '2022', title: 'Tower On-the-Job Training', place: 'Hargeisa Airport (HCMH)', detail: 'Practical tower training and operational familiarisation.' },
@@ -17,7 +18,7 @@ const projects = [
 ];
 export default function Home() {
   return <main>
-    <section id="home" className="hero midnight-hero"><div className="midnight-stars" aria-hidden="true"/><div className="midnight-horizon" aria-hidden="true"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div>
+    <section id="home" className="hero midnight-hero"><div className="midnight-stars" aria-hidden="true"/><FlightIntro/><div className="midnight-horizon" aria-hidden="true"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div>
       <div className="hero-grid container">
         <div className="hero-content">
           <p className="eyebrow"><span className="signal"/> AIR TRAFFIC CONTROLLER AT BERBERA, HCMI</p>
