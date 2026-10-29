@@ -299,3 +299,5 @@ html[data-theme="light"] .relax-chess{background:linear-gradient(180deg,#7487aa 
 .hero-portrait-frame::after{background:radial-gradient(ellipse at 85% 0%,#ffc86b14,transparent 55%),linear-gradient(180deg,transparent 78%,#0b0f1a40)}
 html[data-theme="light"] .hero-portrait-frame{box-shadow:12px 12px 0 -6px var(--sky-mid),12px 12px 0 -5px color-mix(in srgb,var(--accent) 45%,transparent),0 30px 60px -38px #14203a80}
 html[data-theme="light"] .hero-portrait-frame::after{background:radial-gradient(ellipse at 85% 0%,#ffc86b14,transparent 55%)}
+.case-facts{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+@media(max-width:600px){.case-facts{grid-template-columns:1fr}}
