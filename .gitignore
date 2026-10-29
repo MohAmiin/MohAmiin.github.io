@@ -12,3 +12,6 @@ out/
 .env*.local
 .DS_Store
 npm-debug.log*
+
+# Next.js generates this on every build/dev run
+next-env.d.ts
