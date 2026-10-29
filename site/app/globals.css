@@ -119,3 +119,28 @@ html[data-theme="light"] .midnight-horizon{background:linear-gradient(0deg,#8396
 .relax-stars{position:absolute;inset:0;opacity:.8;background-image:radial-gradient(1px 1px at 15% 20%,#fff 99%,transparent),radial-gradient(1px 1px at 30% 45%,#fff 99%,transparent),radial-gradient(2px 2px at 65% 17%,#fff 99%,transparent),radial-gradient(1px 1px at 88% 35%,#fff 99%,transparent);background-size:330px 260px}
 .relax-content{position:relative;z-index:2;text-align:center;padding:80px 18px 150px}.relax-content h1{font:700 clamp(58px,9vw,110px)/1.15 'Playfair Display',serif;margin:15px 0}.relax-content h1 em{color:#ffc86b}.relax-content p:not(.eyebrow){font-size:19px;color:#c9c3ae}.relax-ground{position:absolute;inset:auto 0 0;height:30%;pointer-events:none}.relax-hill{position:absolute;inset:0;clip-path:ellipse(82% 64% at 50% 100%)}.relax-hill.far{background:#121a2e;transform:translateY(-35px)}.relax-hill.near{background:#0a0e19;transform:translateY(15px)}.relax-lights{position:absolute;inset:auto 0 40px;text-align:center;letter-spacing:30px;color:#f5a623;text-shadow:0 0 15px #f5a623}
 html[data-theme="light"] .relax-scene{background:linear-gradient(#9fb3d6,#c9d5ea 75%,#f6d3ae);color:#141a2b}html[data-theme="light"] .relax-content p:not(.eyebrow){color:#333c52}html[data-theme="light"] .relax-hill.far{background:#a9b6cf}html[data-theme="light"] .relax-hill.near{background:#7487aa}
+
+/* Cinematic polish and interactive details */
+.flight-intro{position:absolute;inset:0 0 auto;height:360px;z-index:1;pointer-events:none}
+.flight-svg{display:block;width:100%;height:100%;overflow:visible}
+.flight-contrail{fill:none;stroke:#F2EDD8;stroke-width:1.8;stroke-linecap:round;opacity:.42;filter:drop-shadow(0 0 5px #f2edd877)}
+.flight-plane{fill:#F2EDD8;filter:drop-shadow(0 0 6px #ffc86b);transition:opacity .8s}
+.flight-finished{opacity:0}
+.flight-replay{position:absolute;right:max(18px,calc((100vw - 1160px)/2));top:12px;background:#131929bf;border:1px solid #f5a62355;color:#f2edd8;padding:6px 12px;font:11px 'DM Mono',monospace;letter-spacing:.05em;pointer-events:auto;cursor:pointer}
+.flight-replay:hover{border-color:#f5a623}
+.midnight-hero .hero-content{animation:content-rise 1s ease both}
+.midnight-hero .visual-stack{animation:photo-reveal 1.4s ease .15s both}
+@keyframes content-rise{from{opacity:0;transform:translateY(20px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes photo-reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.midnight-stars{animation:star-breathe 12s ease-in-out infinite alternate}
+@keyframes star-breathe{from{opacity:.35}to{opacity:.85}}
+.midnight-portrait{transition:transform .5s ease,box-shadow .5s ease}
+.midnight-portrait:hover{transform:translate(-3px,-4px);box-shadow:19px 19px 0 -5px var(--sky-mid),19px 19px 0 -3px var(--accent)}
+.project-link,.project{transition:background .25s ease,transform .25s ease}
+.project-link:hover,.project:hover{transform:translateX(5px)}
+.primary,.secondary,.whatsapp-action,.nav-cv{transition:transform .2s ease,filter .2s ease,border-color .2s ease}
+.primary:hover,.secondary:hover,.whatsapp-action:hover,.nav-cv:hover{transform:translateY(-2px)}
+html[data-theme="light"] .flight-replay{background:#fffffff0;color:#141a2b;border-color:#a8640088}
+html[data-theme="light"] .flight-contrail{stroke:#fff;opacity:.75}
+@media(prefers-reduced-motion:reduce){.flight-intro{display:none}.midnight-hero .hero-content,.midnight-hero .visual-stack,.midnight-stars{animation:none}.midnight-portrait,.project-link,.project,.primary,.secondary,.whatsapp-action,.nav-cv{transition:none}}
+@media(max-width:600px){.flight-intro{height:250px;opacity:.6}.flight-replay{top:4px;right:16px}}
