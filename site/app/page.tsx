@@ -13,8 +13,8 @@ const training = [
   'MBA — Accounting · Amoud International University',
 ];
 const projects = [
-  { number: '01', name: 'Airport Operations Management System', type: 'AVIATION SOFTWARE', description: 'Digitising airfield and tower workflows: traffic logs, shift activity, checklists and operational reporting.', status: 'In development' },
-  { number: '02', name: 'Jareeye Moto Delivery', type: 'MOBILE APP', description: 'A rider-to-customer delivery platform for Hargeisa, with live availability, rider approval and simple calling.', status: 'Pilot / staging' },
+  { number: '01', name: 'Airport Operations Management System', type: 'AVIATION SOFTWARE', description: 'A web platform for the control tower: arrival and departure registers, a digital tower logbook, aircraft on ground and operational reporting.', status: 'Development complete' },
+  { number: '02', name: 'Jareeye Moto Delivery', type: 'MOBILE APP', description: 'Partially developed prototype — market validation in progress.', status: 'Prototype' },
   { number: '03', name: 'Websites for businesses', type: 'WEB DEVELOPMENT', description: 'Building practical, responsive digital experiences for local businesses and organisations.', status: 'Selected work' },
 ];
 export default function Home() {
