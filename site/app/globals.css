@@ -339,3 +339,8 @@ html[data-theme="light"] .about-portrait-frame{box-shadow:12px 12px 0 -6px var(-
 @media(max-width:850px){.about-hero{grid-template-columns:1fr}.about-portrait{justify-self:start;max-width:340px;margin-left:12px}.projects-intro{grid-template-columns:1fr;gap:10px}.projects-hero-photo.photo-wide{width:auto}}
 @media(max-width:520px){.about-list li{grid-template-columns:1fr;gap:4px}.about-portrait{max-width:calc(100% - 24px)}}
 @media(prefers-reduced-motion:reduce){.about-link,.about-arrow{transition:none}}
+
+/* Aviation: vertical tower photograph beside Qualifications (864×1210, shown uncropped) */
+.qual-photo{width:100%;max-width:400px;justify-self:center}
+@media(max-width:850px){.qual-photo{justify-self:start;max-width:380px}}
+@media(max-width:520px){.qual-photo{max-width:calc(100% - 12px)}}
