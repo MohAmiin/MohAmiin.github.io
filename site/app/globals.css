@@ -301,3 +301,41 @@ html[data-theme="light"] .hero-portrait-frame{box-shadow:12px 12px 0 -6px var(--
 html[data-theme="light"] .hero-portrait-frame::after{background:radial-gradient(ellipse at 85% 0%,#ffc86b14,transparent 55%)}
 .case-facts{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 @media(max-width:600px){.case-facts{grid-template-columns:1fr}}
+
+/* About: single portrait beside the introduction, then a quiet editorial profile */
+.about-page{padding-top:clamp(40px,5vw,72px)}
+.about-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,96px);align-items:center;padding-bottom:clamp(56px,8vw,96px)}
+.about-intro .detail-title{font-size:clamp(46px,5.2vw,78px);line-height:1.04;margin:18px 0 24px}
+.about-intro .detail-lead{font-size:clamp(19px,1.7vw,23px);margin:0 0 16px}
+.about-intro p:not(.eyebrow):not(.detail-lead){font-size:17px;max-width:560px}
+.about-intro .actions{margin-top:30px}
+.about-portrait{position:relative;margin:0;width:100%;max-width:380px;justify-self:end}
+.about-portrait::before{content:'';position:absolute;z-index:1;top:-12px;left:-12px;width:28px;height:28px;border-top:1px solid var(--accent);border-left:1px solid var(--accent)}
+.about-portrait-frame{border:1px solid color-mix(in srgb,var(--accent) 65%,transparent);box-shadow:12px 12px 0 -6px var(--bg),12px 12px 0 -5px color-mix(in srgb,var(--accent) 45%,transparent),0 34px 70px -38px #000c;overflow:hidden}
+.about-portrait img{display:block;width:100%;height:auto}
+.about-portrait figcaption{font:10px 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+html[data-theme="light"] .about-portrait-frame{box-shadow:12px 12px 0 -6px var(--bg),12px 12px 0 -5px color-mix(in srgb,var(--accent) 45%,transparent),0 30px 60px -38px #14203a80}
+.about-block h2{font-size:clamp(30px,3.6vw,46px)}
+.about-text{font-size:17px;max-width:640px;margin:0 0 26px}
+.about-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.about-list li{display:grid;grid-template-columns:170px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.about-list li>div,.about-link{display:flex;flex-direction:column;gap:2px}
+.about-list strong{font-weight:600;color:var(--ink);font-size:16px}
+.about-list li span:not(.item-date):not(.about-arrow){color:var(--muted);font-size:15px}
+.about-list .item-date{padding-top:3px}
+.about-list li:has(.about-link){display:block;padding:0}
+.about-link{position:relative;padding:16px 40px 16px 0;transition:color .25s ease}
+.about-arrow{position:absolute;right:4px;top:18px;color:var(--accent);transition:transform .3s ease}
+.about-link:hover strong,.about-link:focus-visible strong{color:var(--accent)}
+.about-link:hover .about-arrow,.about-link:focus-visible .about-arrow{transform:translate(4px,-4px)}
+.about-aside{margin-top:30px}.about-aside a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.about-block .qual-list{margin-top:0;max-width:640px}
+/* Projects: compact opening so the sunset photograph is visible on first load */
+.projects-page{padding-top:clamp(36px,4vw,56px)}
+.projects-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:end}
+.projects-intro .detail-title{font-size:clamp(48px,6vw,88px);margin:14px 0 0}
+.projects-intro .detail-lead{font-size:clamp(18px,1.8vw,22px);margin:0 0 8px;max-width:520px}
+.projects-hero-photo.photo-wide{margin-top:clamp(24px,3vw,36px);width:max(70%,min(100%,calc((100svh - 330px) * 16 / 9)))}
+@media(max-width:850px){.about-hero{grid-template-columns:1fr}.about-portrait{justify-self:start;max-width:340px;margin-left:12px}.projects-intro{grid-template-columns:1fr;gap:10px}.projects-hero-photo.photo-wide{width:auto}}
+@media(max-width:520px){.about-list li{grid-template-columns:1fr;gap:4px}.about-portrait{max-width:calc(100% - 24px)}}
+@media(prefers-reduced-motion:reduce){.about-link,.about-arrow{transition:none}}
