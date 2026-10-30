@@ -1,0 +1,79 @@
+name: Deploy site to GitHub Pages
+
+# Builds the Next.js static export in site/ on every pull request to main, and deploys it to
+# GitHub Pages only from main (a push, or a manual run started on main).
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Verify export contents
+        run: |
+          set -e
+          for f in index.html 404.html cv.pdf favicon.ico icon.png apple-icon.png about/index.html aviation/index.html projects/index.html projects/aoms/index.html relax/index.html contact/index.html; do
+            test -s "out/$f" || { echo "Missing out/$f"; exit 1; }
+          done
+          test -d out/_next/static || { echo "Missing out/_next/static"; exit 1; }
+          test "$(head -c 4 out/cv.pdf)" = "%PDF" || { echo "cv.pdf is not a PDF"; exit 1; }
+          # Every local /images/... reference in the HTML must exist in the export.
+          missing=0
+          for img in $(grep -rhoE '"/images/[^"?\\]+' --include='*.html' out | tr -d '"' | sort -u); do
+            test -f "out$img" || { echo "Missing out$img"; missing=1; }
+          done
+          test "$missing" = 0
+          echo "Export OK: $(find out -type f | wc -l) files"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/out
+
+  deploy:
+    # Deploy only from main: pushes to main, or manual runs explicitly started on main.
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
