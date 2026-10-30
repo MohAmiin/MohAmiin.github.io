@@ -412,3 +412,58 @@ html[data-theme="light"] .challenge-portrait-frame{box-shadow:12px 12px 0 -6px v
 .copy-email-status:empty{display:none}
 .footer a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
+/* Off Duty: optional soundscape */
+.soundscape{max-width:620px;margin:20px auto 0;padding:14px 18px 12px;text-align:left;border:1px solid #f5a62340;background:#0b0f1aa6;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.soundscape-title{margin:0 0 8px;font:500 10px 'DM Mono',monospace;letter-spacing:.16em;color:#f5a623}
+.soundscape-title span{letter-spacing:.04em;color:#c9c3ae}
+.soundscape-tracks{display:flex;flex-wrap:wrap;gap:8px 26px}
+.sound-track{display:flex;align-items:center;gap:12px}
+.sound-toggle{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 16px;border:1px solid #f5a62399;border-radius:999px;background:transparent;color:#f2edd8;font:500 14px 'DM Sans',sans-serif;cursor:pointer;transition:background-color .2s,color .2s}
+.sound-toggle:hover{background:#f5a6231f}
+.sound-toggle[aria-pressed="true"]{background:#f5a623;color:#1a1206;border-color:#f5a623}
+.sound-toggle:focus-visible,.sound-volume input:focus-visible{outline:2px solid #ffc86b;outline-offset:3px}
+.sound-toggle:disabled{opacity:.5;cursor:not-allowed}
+.sound-icon{fill:currentColor;flex:none}
+.sound-volume{display:flex;align-items:center;min-height:44px}
+.sound-volume input{width:104px;accent-color:#f5a623;cursor:pointer}
+.soundscape-note{margin:8px 0 0;font-size:13px}
+.relax-back{display:inline-block;margin-top:14px;padding:6px 2px;font-size:14px;color:#c9c3ae;text-decoration:underline;text-underline-offset:4px}
+.relax-back:hover{color:#ffc86b}
+.relax-back:focus-visible{outline:2px solid #ffc86b;outline-offset:3px}
+html[data-theme="light"] .soundscape{background:#ffffffa6;border-color:#8f540055}
+html[data-theme="light"] .soundscape-title{color:#8f5400}
+html[data-theme="light"] .soundscape-title span{color:#333c52}
+html[data-theme="light"] .sound-toggle{color:#141a2b;border-color:#8f540099}
+html[data-theme="light"] .sound-toggle:hover{background:#8f540014}
+html[data-theme="light"] .sound-toggle[aria-pressed="true"]{background:#8f5400;color:#fff;border-color:#8f5400}
+html[data-theme="light"] .sound-toggle:focus-visible,html[data-theme="light"] .sound-volume input:focus-visible,html[data-theme="light"] .relax-back:focus-visible{outline-color:#8f5400}
+html[data-theme="light"] .sound-volume input{accent-color:#8f5400}
+html[data-theme="light"] .relax-back{color:#333c52}
+html[data-theme="light"] .relax-back:hover{color:#8f5400}
+
+/* Off Duty: wildflower meadow and fireflies */
+.relax-scene{min-height:0}
+.relax-content{padding:34px 18px 118px}
+.relax-ground{height:112px}
+.relax-hill.far{transform:translateY(-10px)}
+.relax-hill.near{transform:translateY(14px)}
+.relax-meadow{position:absolute;inset:0}
+.flower{position:absolute;bottom:6px;width:2px;height:var(--h);background:linear-gradient(#2f4a43,#16231f);transform-origin:50% 100%;animation:meadow-sway var(--d) ease-in-out var(--delay) infinite alternate}
+.flower:nth-child(3n){bottom:14px}.flower:nth-child(4n+1){bottom:2px}
+.flower::before{content:'';position:absolute;left:-5px;top:42%;width:6px;height:3px;border-radius:6px 0;background:#2f4a43;transform:rotate(-24deg)}
+.flower::after{content:'';position:absolute;left:50%;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:radial-gradient(circle,var(--eye,#f5a623) 0 26%,var(--petal) 30% 100%);box-shadow:0 0 10px -2px var(--petal)}
+.flower.c0{--petal:#f2edd8}.flower.c1{--petal:#ffc86b;--eye:#b06a00}.flower.c2{--petal:#b8a8e6}.flower.c3{--petal:#eaa9bb}
+.relax-fireflies{position:absolute;inset:0;z-index:1;pointer-events:none}
+.relax-fireflies span{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffe39a;box-shadow:0 0 8px 2px #f5a623aa;opacity:0;animation:firefly-glow var(--d) ease-in-out var(--delay) infinite,firefly-drift calc(var(--d) * 1.6) ease-in-out var(--delay) infinite alternate}
+@keyframes meadow-sway{from{rotate:-4deg}to{rotate:4deg}}
+@keyframes firefly-glow{0%,55%{opacity:0}70%{opacity:.95}85%,100%{opacity:0}}
+@keyframes firefly-drift{from{translate:0 0}50%{translate:14px -10px}to{translate:-8px -22px}}
+html[data-theme="light"] .relax-hill.near{background:#7487aa}
+html[data-theme="light"] .flower{background:linear-gradient(#4d6a5c,#3b4f63)}
+html[data-theme="light"] .flower::before{background:#4d6a5c}
+html[data-theme="light"] .flower::after{box-shadow:none}
+html[data-theme="light"] .flower.c0{--petal:#fffaf0}html[data-theme="light"] .flower.c1{--petal:#ffb23f;--eye:#7a4300}html[data-theme="light"] .flower.c2{--petal:#d9ccff}html[data-theme="light"] .flower.c3{--petal:#ffc2d1}
+html[data-theme="light"] .relax-fireflies span{background:#fff4cf;box-shadow:0 0 6px 1px #ffc86b99}
+@media(max-width:850px){.relax-fireflies{inset:auto 0 0;height:96px}}
+@media(max-width:520px){.relax-content{padding:26px 16px 104px}.relax-ground{height:96px}.soundscape{padding:12px 14px 10px}.soundscape-title span{display:block;margin-top:2px}.soundscape-tracks{flex-direction:column;gap:4px}.sound-track{justify-content:space-between}.sound-toggle{flex:1}.sound-volume input{width:120px}.flower:nth-child(2n){display:none}}
+@media(prefers-reduced-motion:reduce){.flower,.relax-fireflies span{animation:none}.relax-fireflies span{opacity:.45}.sound-toggle{transition:none}}
