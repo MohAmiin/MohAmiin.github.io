@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Next.js build output and static export
+.next/
+out/
+
+# TypeScript build caches
+*.tsbuildinfo
+
+# Local environment and OS files
+.env*.local
+.DS_Store
+npm-debug.log*
+
+# Next.js generates this on every build/dev run
+next-env.d.ts
