@@ -10,7 +10,7 @@ const training = [
   'ICAO 051 — ATS licensing',
   'ICAO 291 — Aviation English',
   'ICAO English Language Proficiency — Level 4',
-  'MBA — Accounting · Amoud International University',
+  'MBA (Accounting and Finance) · Amoud International University',
 ];
 const projects = [
   { number: '01', name: 'Airport Operations Management System', type: 'AVIATION SOFTWARE', description: 'A web platform for the control tower: arrival and departure registers, a digital tower logbook, aircraft on ground and operational reporting.', status: 'Development complete' },

@@ -388,3 +388,9 @@ html[data-theme="light"] .challenge-portrait-frame{box-shadow:12px 12px 0 -6px v
 .relax-ground{height:72px}.relax-hill.far{transform:translateY(-14px)}.relax-hill.near{transform:translateY(12px)}.relax-lights{bottom:20px}
 @media(max-width:520px){.relax-content{padding-bottom:96px}}
 @media(max-width:520px){.chess-challenge{padding-top:24px}}
+/* About: finance skills */
+.skill-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:22px}
+.skill-label{font:500 10px 'DM Mono',monospace;letter-spacing:.16em;color:var(--accent)}
+.skill-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0}
+.skill-tags li{padding:5px 13px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--ink);background:var(--bg2)}
+
