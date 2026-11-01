@@ -388,3 +388,22 @@ html[data-theme="light"] .challenge-portrait-frame{box-shadow:12px 12px 0 -6px v
 .relax-ground{height:72px}.relax-hill.far{transform:translateY(-14px)}.relax-hill.near{transform:translateY(12px)}.relax-lights{bottom:20px}
 @media(max-width:520px){.relax-content{padding-bottom:96px}}
 @media(max-width:520px){.chess-challenge{padding-top:24px}}
+
+
+/* AOMS case study: radar-inspired visual concept, deliberately not surveillance data. */
+.aoms-radar-showcase{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(20px,4vw,48px);padding:clamp(20px,3vw,36px);margin:36px 0;border:1px solid var(--line);background:var(--bg2)}
+.aoms-radar-description h3{font:700 clamp(26px,3vw,38px)/1.2 'Playfair Display',Georgia,serif;letter-spacing:-.03em;margin:12px 0 18px}
+.aoms-radar-description h3 em{color:var(--accent)}
+.aoms-radar-description p{font-size:15px;line-height:1.75;color:var(--muted)}
+.aoms-radar-description .aoms-radar-disclaimer{font:11px/1.7 'DM Mono',monospace;letter-spacing:.03em;color:var(--ink);border-left:2px solid var(--accent);padding-left:12px;margin-top:24px}
+.aoms-radar-display{position:relative;overflow:hidden;isolation:isolate;min-width:0;border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));background:radial-gradient(circle at center,color-mix(in srgb,var(--accent) 8%,transparent),transparent 62%),#0b1322;color:#8799a9;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.aoms-radar-display::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.22;background:linear-gradient(to right,#93abc425 1px,transparent 1px),linear-gradient(to bottom,#93abc425 1px,transparent 1px);background-size:24px 24px}
+.aoms-radar-graphic{display:block;width:90%;height:90%;max-height:420px}
+.aoms-radar-rings{opacity:.42}
+.aoms-radar-sweep{transform-origin:160px 160px;animation:aoms-concept-sweep 16s linear infinite}
+@keyframes aoms-concept-sweep{to{transform:rotate(360deg)}}
+.aoms-radar-header,.aoms-radar-footer{position:absolute;left:14px;right:14px;z-index:1;display:flex;justify-content:space-between;gap:10px;font:9px/1.4 'DM Mono',monospace;letter-spacing:.08em;color:#c2ccda}
+.aoms-radar-header{top:14px}.aoms-radar-footer{bottom:14px;color:#efc889}
+html[data-theme="light"] .aoms-radar-display{background:radial-gradient(circle at center,#ffc86b1b,transparent 60%),#172335}
+@media(max-width:750px){.aoms-radar-showcase{grid-template-columns:1fr}.aoms-radar-display{max-width:480px;width:100%;margin:auto}}
+@media(prefers-reduced-motion:reduce){.aoms-radar-sweep{animation:none}}
