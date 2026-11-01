@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import SiteHeader from '../components/site-header';
 import SiteFooter from '../components/site-footer';
@@ -16,5 +17,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><SiteHeader/>{children}<SiteFooter/><ScrollReveal/></body></html>;
+  return <html lang="en"><body><SiteHeader/>{children}<SiteFooter/><ScrollReveal/>
+    {/* Cloudflare Web Analytics (DNS-only zone, so the beacon is installed manually) */}
+    <Script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0c392b83026b4e0887c6f296eee02437"}' strategy="afterInteractive"/>
+  </body></html>;
 }
