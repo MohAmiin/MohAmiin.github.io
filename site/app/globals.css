@@ -512,3 +512,7 @@ html[data-theme="light"] .breath-button.primary-like{color:#fff}
 /* Hero: navy-suit studio portrait (1024x1536); About page: sunglasses portrait against a grey wall (1136x1408). Both cropped into their existing frames */
 .hero-portrait img{aspect-ratio:1122/1402;object-fit:cover;object-position:center 20%}
 .about-portrait img{aspect-ratio:1050/1301;object-fit:cover;object-position:center 20%}
+
+/* Experience page header: tall nighttime tower photograph (941x1672), shown uncropped at about the previous frame height */
+.split-intro .aviation-hero-photo{max-width:360px}
+@media(max-width:850px){.split-intro .aviation-hero-photo{max-width:400px}}
