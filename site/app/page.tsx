@@ -40,7 +40,7 @@ export default function Home() {
       </header>
       <div className="magazine-word" aria-hidden="true">AMIIN</div>
       <figure className="magazine-photo">
-        <img src="/images/portrait-navy-suit-cutout.webp" alt="Mohamed Amiin standing in a navy suit, white shirt and navy tie" width={1024} height={1536} fetchPriority="high"/>
+        <img src="/images/portrait-landing-hero.webp" alt="Mohamed Amiin in a navy suit, white shirt, navy tie and glasses" width={1254} height={1254} fetchPriority="high"/>
       </figure>
       <div className="magazine-columns">
         <div className="magazine-identity">
