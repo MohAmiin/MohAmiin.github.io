@@ -509,6 +509,6 @@ html[data-theme="light"] .breath-button.primary-like{color:#fff}
 .home-about-photo figcaption{font-size:12px;line-height:1.7;color:var(--muted);max-width:720px}
 @media(max-width:600px){.home-about-photo img{aspect-ratio:4/3;max-height:330px}}
 
-/* Hero: navy-suit studio portrait (1024x1536); About page: outdoor sunglasses portrait. Both cropped into their existing frames */
+/* Hero: navy-suit studio portrait (1024x1536); About page: sunglasses portrait against a grey wall (1136x1408). Both cropped into their existing frames */
 .hero-portrait img{aspect-ratio:1122/1402;object-fit:cover;object-position:center 20%}
-.about-portrait img{aspect-ratio:1050/1301;object-fit:cover;object-position:center 25%}
+.about-portrait img{aspect-ratio:1050/1301;object-fit:cover;object-position:center 20%}
