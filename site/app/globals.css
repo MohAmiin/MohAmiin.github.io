@@ -513,10 +513,6 @@ html[data-theme="light"] .breath-button.primary-like{color:#fff}
 .hero-portrait img{aspect-ratio:1122/1402;object-fit:cover;object-position:center 20%}
 .about-portrait img{aspect-ratio:1050/1301;object-fit:cover;object-position:center 20%}
 
-/* Experience page header: tall nighttime tower photograph (941x1672), shown uncropped at about the previous frame height */
-.split-intro .aviation-hero-photo{max-width:360px}
-@media(max-width:850px){.split-intro .aviation-hero-photo{max-width:400px}}
-
 
 /* Homepage only: editorial magazine cover. Shared navigation and site themes elsewhere remain unchanged. */
 body:has(.magazine-hero)>header.topbar{display:none}
