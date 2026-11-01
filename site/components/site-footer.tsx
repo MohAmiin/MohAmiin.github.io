@@ -1,1 +1,2 @@
-export default function SiteFooter(){return <footer className="container footer"><span>© {new Date().getFullYear()} Mohamed Amiin</span><span>REFERENCES AVAILABLE ON REQUEST · <a href="/relax">SIT IN THE MEADOW ↗</a></span></footer>}
+import { linkedIn } from './profiles';
+export default function SiteFooter(){return <footer className="container footer"><span>© {new Date().getFullYear()} Mohamed Amiin · <a href={linkedIn} target="_blank" rel="noopener noreferrer">LINKEDIN ↗<span className="sr-only"> (opens LinkedIn in a new tab)</span></a></span><span>REFERENCES AVAILABLE ON REQUEST · <a href="/relax">SIT IN THE MEADOW ↗</a></span></footer>}
