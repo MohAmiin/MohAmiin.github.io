@@ -22,8 +22,7 @@ export default function Home() {
     <section id="home" className="hero midnight-hero"><div className="midnight-stars" aria-hidden="true"/><FlightIntro/><div className="midnight-horizon" aria-hidden="true"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div>
       <div className="hero-grid container">
         <div className="hero-content">
-          <p className="eyebrow"><span className="signal"/> AIR TRAFFIC CONTROLLER AT BERBERA, HCMI</p>
-          <p className="hello">AIR TRAFFIC CONTROLLER & SOFTWARE DEVELOPER</p>
+          <p className="eyebrow"><span className="signal"/> AIR TRAFFIC CONTROLLER &amp; DEVELOPER · BERBERA, HCMI</p>
           <h1>Mohamed Amiin<br/><em>Abdirahman Hassan.</em></h1>
           <p className="lead">Calm in the tower,<br/>curious at the keyboard.</p>
           <p className="hero-copy">I keep traffic safe and moving at Berbera International Airport, day and night, and I build software that makes tower work simpler.</p>
