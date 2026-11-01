@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import FlightIntro from '../components/flight-intro';
+import ThemeToggle from '../components/theme-toggle';
 const experience = [
   { date: '2022 — Present', title: 'Air Traffic Controller', place: 'Berbera International Airport (HCMI)', detail: 'Aerodrome control, aircraft sequencing and safe, efficient runway operations.' },
   { date: '2022', title: 'Tower On-the-Job Training', place: 'Hargeisa Airport (HCMH)', detail: 'Practical tower training and operational familiarisation.' },
@@ -19,23 +19,44 @@ const projects = [
 ];
 export default function Home() {
   return <main>
-    <section id="home" className="hero midnight-hero"><div className="midnight-stars" aria-hidden="true"/><FlightIntro/><div className="midnight-horizon" aria-hidden="true"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div>
-      <div className="hero-grid container">
-        <div className="hero-content">
-          <p className="eyebrow"><span className="signal"/> AIR TRAFFIC CONTROLLER AT BERBERA, HCMI</p>
-          <p className="hello">AIR TRAFFIC CONTROLLER & SOFTWARE DEVELOPER</p>
-          <h1>Mohamed Amiin<br/><em>Abdirahman Hassan.</em></h1>
-          <p className="lead">Calm in the tower,<br/>curious at the keyboard.</p>
-          <p className="hero-copy">I keep traffic safe and moving at Berbera International Airport, day and night, and I build software that makes tower work simpler.</p>
-          <div className="actions"><a className="whatsapp-action" href="https://wa.me/252659740002" target="_blank" rel="noreferrer">WhatsApp ↗</a><a href="/cv.pdf" className="primary" download>Download CV ↗</a><a href="mailto:Mohamedjareeye@gmail.com" className="secondary">Email ↗</a></div>
+    <section id="home" className="magazine-hero">
+      <header className="magazine-topbar">
+        <span className="magazine-volume">VOL. 01 · BERBERA · HCMI</span>
+        <div className="magazine-header-actions">
+          <nav className="magazine-nav" aria-label="Primary navigation">
+            <a href="/about">About</a><a href="/aviation">Experience</a><a href="/projects">Projects</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
+          </nav>
+          <a className="magazine-top-cv" href="/cv.pdf" download>CV ↓</a>
+          <ThemeToggle/>
+          <details className="magazine-mobile-menu">
+            <summary>Menu</summary>
+            <nav aria-label="Mobile primary navigation">
+              <a href="/about">About</a><a href="/aviation">Experience</a><a href="/projects">Projects</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
+              <a href="/cv.pdf" download>Download CV ↓</a>
+            </nav>
+          </details>
         </div>
-        <div className="visual-stack"><figure className="hero-portrait"><div className="hero-portrait-frame"><img src="/images/portrait-navy-suit.jpg" alt="Portrait of Mohamed Amiin in a navy suit, white shirt, navy tie and glasses against a light background" width={1024} height={1536} fetchPriority="high" /></div><figcaption className="photo-tag">MOHAMED AMIIN · PERSONAL PORTFOLIO</figcaption></figure><div className="radar-card midnight-radar" aria-label="Decorative radar showing the relative direction of Berbera and Hargeisa">
-          <div className="card-top"><span>RADAR / PERSONAL SITE</span><span className="live"><span className="signal"/> ON FREQUENCY</span></div>
-          <div className="radar" aria-hidden="true"><div className="sweep"/><div className="cross cross-v"/><div className="cross cross-h"/><div className="ring ring-one"/><div className="ring ring-two"/><div className="ring ring-three"/><div className="target t1"/><div className="target t2"/><span className="radar-label label1">HCMI</span><span className="radar-label label2">HCMH</span></div>
-          <div className="radar-bottom"><span>BERBERA NE OF HARGEISA</span><span>NOT FOR NAVIGATION</span></div>
-        </div></div>
+      </header>
+      <div className="magazine-word" aria-hidden="true">AMIIN</div>
+      <figure className="magazine-photo">
+        <img src="/images/portrait-navy-suit.jpg" alt="Mohamed Amiin standing in a navy suit, white shirt and navy tie" width={1024} height={1536} fetchPriority="high"/>
+      </figure>
+      <div className="magazine-columns">
+        <div className="magazine-identity">
+          <h1>Mohamed Amiin<br/><em>Abdirahman Hassan.</em></h1>
+          <div className="magazine-rule" aria-hidden="true"/>
+          <p>Air traffic controller at Berbera International Airport. Developer of software that makes tower work simpler.</p>
+        </div>
+        <div className="magazine-right">
+          <p className="magazine-quote">Calm in the tower, curious at the keyboard.</p>
+          <div className="magazine-actions">
+            <a className="magazine-whatsapp" href="https://wa.me/252659740002" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a className="magazine-download" href="/cv.pdf" download>Download CV</a>
+          </div>
+          <a className="magazine-email" href="mailto:Mohamedjareeye@gmail.com">Email ↗</a>
+        </div>
       </div>
-      <div className="hero-foot container"><span>BERBERA · SOMALILAND</span><span>SCROLL TO EXPLORE ↓</span></div>
+      <p className="magazine-credential">LICENSED ATCO · ICAO ELP 4 · SINCE 2022</p>
     </section>
     <div className="glance-strip container" data-reveal><div><strong>2022</strong><span>CONTROLLING SINCE</span></div><div><strong>Day & night</strong><span>OPERATIONS AT HCMI</span></div><div><strong>3</strong><span>LANGUAGES SPOKEN</span></div><div><strong>ICAO 4</strong><span>ENGLISH PROFICIENCY</span></div></div>
     <section id="about" className="section container about" data-reveal>
