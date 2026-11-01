@@ -25,8 +25,8 @@ export default function Home() {
           <p className="eyebrow"><span className="signal"/> AIR TRAFFIC CONTROLLER AT BERBERA, HCMI</p>
           <p className="hello">AIR TRAFFIC CONTROLLER & SOFTWARE DEVELOPER</p>
           <h1>Mohamed Amiin<br/><em>Abdirahman Hassan.</em></h1>
-          <p className="lead">Calm in the tower,<br/>curious at the keyboard.</p>
-          <p className="hero-copy">I keep traffic safe and moving at Berbera International Airport, day and night, and I build software that makes tower work simpler.</p>
+          <p className="lead">From runway clearances<br/>to lines of code.</p>
+          <p className="hero-copy">At Berbera International Airport, I help manage aircraft movements and runway operations. Beyond the frequency, I design and build software that turns operational challenges into practical digital solutions.</p>
           <div className="actions"><a className="whatsapp-action" href="https://wa.me/252659740002" target="_blank" rel="noreferrer">WhatsApp ↗</a><a href="/cv.pdf" className="primary" download>Download CV ↗</a><a href="mailto:Mohamedjareeye@gmail.com" className="secondary">Email ↗</a></div>
         </div>
         <div className="visual-stack"><figure className="hero-portrait"><div className="hero-portrait-frame"><img src="/images/homepage-outdoor-hero.webp" alt="Mohamed Amiin outdoors in a dark suit, tie and sunglasses" width={1122} height={1402} fetchPriority="high" /></div><figcaption className="photo-tag">MOHAMED AMIIN · PERSONAL PORTFOLIO</figcaption></figure><div className="radar-card midnight-radar" aria-label="Decorative radar showing the relative direction of Berbera and Hargeisa">
