@@ -45,7 +45,31 @@ export default function Aoms(){return <main className="container detail-page cas
     <article className="case-card" data-reveal style={i(2)}><h3>Accountability</h3><p>On a shared tower position, it must always be clear which controller made each entry and each correction.</p></article>
   </div></div></section>
 
-  <section className="case-section" data-reveal aria-labelledby="solution"><p className="section-tag">02 / THE SOLUTION</p><div><h2 id="solution">One record of <em>the tower’s day.</em></h2><p className="case-text">AOMS brings the records a tower keeps by hand — arrivals, departures, the logbook, aircraft on the ground — into a single authenticated web application, designed from the controller’s position: quick entry during busy traffic, clear attribution of every entry, and no record that can quietly disappear.</p><p className="case-text case-context"><span className="case-card-no">OPERATIONAL CONTEXT</span>The design draws on my own professional experience in tower operations, including my on-the-job tower training at Hargeisa (HCMH). This reflects my experience only; it is not a claim of official adoption or deployment by any airport.</p><div className="case-cards">{principles.map(([t,d],n)=><article className="case-card" data-reveal style={i(n)} key={t}><span className="case-card-no">0{n+1}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
+  <section className="case-section" data-reveal aria-labelledby="solution"><p className="section-tag">02 / THE SOLUTION</p><div><h2 id="solution">One record of <em>the tower’s day.</em></h2><p className="case-text">AOMS brings the records a tower keeps by hand — arrivals, departures, the logbook, aircraft on the ground — into a single authenticated web application, designed from the controller’s position: quick entry during busy traffic, clear attribution of every entry, and no record that can quietly disappear.</p><p className="case-text case-context"><span className="case-card-no">OPERATIONAL CONTEXT</span>The design draws on my own professional experience in tower operations, including my on-the-job tower training at Hargeisa (HCMH). This reflects my experience only; it is not a claim of official adoption or deployment by any airport.</p><div className="aoms-radar-showcase" aria-label="Radar-inspired portfolio design concept for AOMS">
+      <div className="aoms-radar-description">
+        <span className="case-card-no">INTERFACE CONCEPT / AVIATION</span>
+        <h3>Radar-inspired <em>overview.</em></h3>
+        <p>A visual concept for exploring AOMS flight records with the familiar language of an aviation display. The current system records movements, statuses and tower activity; it does not provide surveillance tracking or aircraft position data.</p>
+        <p className="aoms-radar-disclaimer">Decorative visualization only · Not a live AOMS feature · Not for ATC use</p>
+      </div>
+      <div className="aoms-radar-display" aria-hidden="true">
+        <div className="aoms-radar-header"><span>HCMI / CONCEPT HUD</span><span>DEMO MODE</span></div>
+        <svg className="aoms-radar-graphic" viewBox="0 0 320 320" focusable="false">
+          <defs><linearGradient id="aomsConceptBeam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="var(--accent)" stopOpacity="0.01"/><stop offset="1" stopColor="var(--accent)" stopOpacity="0.26"/></linearGradient></defs>
+          <g className="aoms-radar-rings" fill="none" stroke="currentColor" strokeWidth="1">
+            <circle cx="160" cy="160" r="40"/><circle cx="160" cy="160" r="80"/><circle cx="160" cy="160" r="120"/>
+            <path d="M24 160H296 M160 24V296 M64 64L256 256 M256 64L64 256" opacity=".45"/>
+          </g>
+          <g className="aoms-radar-sweep">
+            <path d="M160 160L160 40A120 120 0 0 1 265 102Z" fill="url(#aomsConceptBeam)"/>
+            <path d="M160 160V40" stroke="var(--accent)" strokeWidth="1.5"/>
+          </g>
+          <circle cx="160" cy="160" r="4" fill="var(--accent)"/>
+        </svg>
+        <div className="aoms-radar-footer"><span>NO AIRCRAFT POSITION DATA</span><span>NOT FOR NAVIGATION</span></div>
+      </div>
+    </div>
+    <div className="case-cards">{principles.map(([t,d],n)=><article className="case-card" data-reveal style={i(n)} key={t}><span className="case-card-no">0{n+1}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
 
   <section className="case-section" data-reveal aria-labelledby="screens"><p className="section-tag">03 / WORKFLOWS</p><div><h2 id="screens">Inside <em>the interface.</em></h2><ScreenshotGallery shots={aomsWorkflows} planned={aomsPlannedWorkflows} captions={aomsWorkflowCaptions}/><p className="case-note demo-note">All screenshots are taken from a demonstration environment containing only synthetic flight and movement data. They are not live airport records.</p></div></section>
 
