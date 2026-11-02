@@ -6,33 +6,34 @@ const experience = [
   { date: '2016 — 2021', title: 'Finance Officer', place: 'Sompower Electric Company', detail: 'Accounting and financial operations before transitioning into aviation.' },
   { date: 'Project-based', title: 'Freelance Accountant', place: 'Small businesses', detail: 'Accounting support, QuickBooks Online and Desktop and Odoo setup, and customized Excel accounting forms.' },
 ];
-const training = [
-  'ICAO 052 — ATC simulation · Fujairah Aviation Academy',
-  'ICAO 051 — ATS licensing',
-  'ICAO 291 — Aviation English',
-  'ICAO English Language Proficiency — Level 4',
-  'MBA (Accounting and Finance) · Amoud International University',
-];
 const projects = [
-  { number: '01', name: 'Airport Operations Management System', type: 'AVIATION SOFTWARE', description: 'A web platform for the control tower: arrival and departure registers, a digital tower logbook, aircraft on ground and operational reporting.', status: 'Development complete' },
-  { number: '02', name: 'Jareeye Moto Delivery', type: 'MOBILE APP', description: 'Partially developed prototype — market validation in progress.', status: 'Prototype' },
-  { number: '03', name: 'Websites for businesses', type: 'WEB DEVELOPMENT', description: 'Building practical, responsive digital experiences for local businesses and organisations.', status: 'Selected work' },
+  { number: '01', name: 'Airport Operations Management System', type: 'DIGITAL PRODUCT', description: 'A web platform for managing tower movements, logbooks and operational records.', status: 'Development complete for current scope' },
+  { number: '02', name: 'Jareeye Moto Delivery', type: 'MOBILE APP', description: 'A delivery platform prototype connecting customers with local motorcycle riders.', status: 'Prototype · market validation' },
+  { number: '03', name: 'Graphic design', type: 'VISUAL DESIGN', description: 'Graphic design and visual communication. Selected pieces will be added to the portfolio.', status: 'Portfolio selection in progress' },
+  { number: '04', name: 'Excel business & budget tools', type: 'PRACTICAL TOOLS', description: 'Custom spreadsheets for small-business records and personal finance. Free templates are being prepared.', status: 'Free templates in preparation' },
+  { number: '05', name: 'Websites for businesses', type: 'WEB DEVELOPMENT', description: 'Practical, responsive digital experiences for businesses and organisations.', status: 'Selected work' },
+];
+const skillAreas = [
+  { area: 'SOFTWARE DEVELOPMENT', name: 'Build digital products', detail: 'Web applications, mobile app prototypes, databases and workflow tools.' },
+  { area: 'GRAPHIC DESIGN', name: 'Communicate visually', detail: 'Graphic design, visual concepts and creative presentation.' },
+  { area: 'BUSINESS & FINANCE', name: 'Make numbers useful', detail: 'Accounting, customised Excel systems, budgets and small-business tools.' },
+  { area: 'PRODUCT THINKING', name: 'Turn problems into ideas', detail: 'Connecting real needs with clear interfaces and practical solutions.' },
 ];
 export default function Home() {
   return <main>
     <section id="home" className="magazine-hero">
       <header className="magazine-topbar">
-        <span className="magazine-volume">VOL. 01 · BERBERA · HCMI</span>
+        <span className="magazine-volume">VOL. 01 · IDEAS & CREATIVE WORK</span>
         <div className="magazine-header-actions">
           <nav className="magazine-nav" aria-label="Primary navigation">
-            <a href="/about">About</a><a href="/aviation">Experience</a><a href="/projects">Projects</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
+            <a href="/projects">Projects</a><a href="/#skills">Skills</a><a href="/about">About</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
           </nav>
           <a className="magazine-top-cv" href="/cv.pdf" download>CV ↓</a>
           <ThemeToggle/>
           <details className="magazine-mobile-menu">
             <summary>Menu</summary>
             <nav aria-label="Mobile primary navigation">
-              <a href="/about">About</a><a href="/aviation">Experience</a><a href="/projects">Projects</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
+              <a href="/projects">Projects</a><a href="/#skills">Skills</a><a href="/about">About</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
               <a href="/cv.pdf" download>Download CV ↓</a>
             </nav>
           </details>
@@ -46,20 +47,20 @@ export default function Home() {
         <div className="magazine-identity">
           <h1>Mohamed Amiin<br/><em>Abdirahman Hassan.</em></h1>
           <div className="magazine-rule" aria-hidden="true"/>
-          <p>Air traffic controller at Berbera International Airport. Developer of software that makes tower work simpler.</p>
+          <p>Developer, graphic designer and business-minded maker. I create digital products, visual work and practical tools.</p>
         </div>
         <div className="magazine-right">
-          <p className="magazine-quote">Calm in the tower, curious at the keyboard.</p>
+          <p className="magazine-quote">I create, design and build.</p>
           <div className="magazine-actions">
             <a className="magazine-whatsapp" href="https://wa.me/252659740002" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a className="magazine-download" href="/cv.pdf" download>Download CV</a>
+            <a className="magazine-download" href="/projects">Explore projects ↗</a>
           </div>
           <a className="magazine-email" href="mailto:Mohamedjareeye@gmail.com">Email ↗</a>
         </div>
       </div>
-      <p className="magazine-credential">LICENSED ATCO · ICAO ELP 4 · SINCE 2022</p>
+      <p className="magazine-credential">SOFTWARE · GRAPHIC DESIGN · BUSINESS TOOLS</p>
     </section>
-    <div className="glance-strip container" data-reveal><div><strong>2022</strong><span>CONTROLLING SINCE</span></div><div><strong>Day & night</strong><span>OPERATIONS AT HCMI</span></div><div><strong>3</strong><span>LANGUAGES SPOKEN</span></div><div><strong>ICAO 4</strong><span>ENGLISH PROFICIENCY</span></div></div>
+    <div className="glance-strip container" data-reveal><div><strong>Software</strong><span>DIGITAL PRODUCTS</span></div><div><strong>Design</strong><span>VISUAL WORK</span></div><div><strong>Finance</strong><span>BUSINESS TOOLS</span></div><div><strong>Aviation</strong><span>PROFESSIONAL EXPERIENCE</span></div></div>
     <section id="about" className="section container about" data-reveal>
       <p className="section-tag">01 / ABOUT</p><div><h2>Calm in the tower,<br/><em>curious at the keyboard.</em></h2><p>I'm Mohamed Amiin Abdirahman Hassan, an air traffic controller based in Somaliland and a developer of aviation and business software. Air traffic control taught me to think clearly under pressure; coding gives me a way to improve the systems people depend on.</p><figure className="story-photo home-about-photo"><img src="/images/hargeisa-vip-tower.webp" alt="Mohamed Amiin wearing an ATC headset in Hargeisa Tower, with an aircraft visible outside" width={1400} height={1050} loading="lazy"/><figcaption>On frequency at Hargeisa Airport Tower (HCMH), providing air traffic control services during a VIP flight.</figcaption></figure></div>
     </section>
