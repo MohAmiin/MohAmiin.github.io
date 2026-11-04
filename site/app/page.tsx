@@ -58,7 +58,7 @@ export default function Home() {
           <a className="magazine-email" href="mailto:Mohamedjareeye@gmail.com">Email ↗</a>
         </div>
       </div>
-      <p className="magazine-credential">DEVELOPER · GRAPHIC DESIGNER · PRODUCT BUILDER</p>
+      <p className="magazine-credential">CREATOR · DESIGNER · DEVELOPER</p>
     </section>
     <div className="glance-strip container" data-reveal><div><strong>Software</strong><span>DIGITAL PRODUCTS</span></div><div><strong>Design</strong><span>VISUAL WORK</span></div><div><strong>Finance</strong><span>BUSINESS TOOLS</span></div><div><strong>Aviation</strong><span>PROFESSIONAL EXPERIENCE</span></div></div>
     <section id="projects" className="section container" data-reveal><p className="section-tag">01 / PROJECTS</p><div><h2>Projects, designs & <em>practical tools.</em></h2><p className="section-intro">Software systems, a mobile app prototype, websites, practical Excel tools and graphic design. Each project shows its actual stage of development.</p><figure className="story-photo"><img src="/images/working.jpg" alt="Mohamed Amiin working on a laptop" width={1006} height={820} loading="lazy"/><figcaption>Building software and exploring new ideas</figcaption></figure><div className="projects">{projects.map((p,i)=><a className="project" href={p.href} data-reveal style={{'--i':i} as CSSProperties} key={p.number}><span className="project-no">{p.number}</span><div><p className="eyebrow">{p.type}</p><h3>{p.name}</h3><p>{p.description}</p><span className="status">{p.status}</span></div><span className="project-arrow" aria-hidden="true">↗</span></a>)}</div></div></section>
