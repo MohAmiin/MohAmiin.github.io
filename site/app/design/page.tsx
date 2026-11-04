@@ -11,7 +11,7 @@ export default function Design(){return <main className="container detail-page d
   <section className="page-section" data-reveal aria-labelledby="campaign-recognition">
     <p className="item-date">CAMPAIGN · DECEMBER 2025</p>
     <h2 id="campaign-recognition">Somaliland <em>Recognition Day.</em></h2>
-    <p className="section-intro">A poster series celebrating 26 December 2025, the day Israel became the first country to recognise Somaliland. Each design is signed with my M mark.</p>
+    <p className="section-intro">A poster series celebrating 26 December 2025, the day Israel became the first country to recognise Somaliland. Each design carries my M mark.</p>
     <div className="design-grid">{pieces.map((p,i)=><figure className="design-piece" data-reveal style={{'--i':i} as CSSProperties} key={p.src}><a href={p.src} target="_blank" rel="noreferrer" aria-label={`Open full-size design: ${p.title}`}><img src={p.src} alt={p.alt} width={1536} height={1024} loading={i===0?'eager':'lazy'} decoding="async"/></a><figcaption>{p.title}</figcaption></figure>)}</div>
   </section>
   <a className="secondary inline-action" href="/projects">← All projects</a>
