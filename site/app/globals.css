@@ -564,3 +564,4 @@ html[data-theme="light"] .magazine-download{background:#9A7432;color:#fff}
 .magazine-photo img{object-fit:contain;object-position:center bottom}
 @media(max-width:1250px){.magazine-photo{width:42vw}}
 @media(max-width:700px){.magazine-photo{width:min(100% - 32px,340px)}}
+.timeline-item .skill-tags{margin-top:14px}
