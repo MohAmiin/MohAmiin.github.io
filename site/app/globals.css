@@ -565,12 +565,3 @@ html[data-theme="light"] .magazine-download{background:#9A7432;color:#fff}
 @media(max-width:1250px){.magazine-photo{width:42vw}}
 @media(max-width:700px){.magazine-photo{width:min(100% - 32px,340px)}}
 .timeline-item .skill-tags{margin-top:14px}
-.design-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:40px}
-.design-piece{margin:0}
-.design-piece:first-child{grid-column:1/-1}
-.design-piece a{display:block;border:1px solid var(--line);background:var(--bg2);overflow:hidden}
-.design-piece img{display:block;width:100%;height:auto;transition:transform .5s ease}
-.design-piece a:hover img{transform:scale(1.02)}
-.design-piece figcaption{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:10px}
-@media(max-width:700px){.design-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.design-piece img{transition:none}}
