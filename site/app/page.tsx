@@ -11,7 +11,7 @@ const projects = [
   { number: '02', name: 'Jareeye Moto Delivery', type: 'MOBILE APP', description: 'A delivery platform prototype connecting customers with local motorcycle riders.', status: 'Prototype · market validation', href: '/projects/jareeye' },
   { number: '03', name: 'Websites for businesses', type: 'WEB DEVELOPMENT', description: 'Practical, responsive digital experiences for businesses and organisations.', status: 'Selected work', href: '/projects' },
   { number: '04', name: 'Excel business & budget tools', type: 'PRACTICAL TOOLS', description: 'Custom spreadsheets for small-business records and personal finance. Free templates are being prepared.', status: 'Free templates in preparation', href: '/about#finance' },
-  { number: '05', name: 'Graphic design', type: 'VISUAL DESIGN', description: 'Posters and social-media design, starting with a campaign for Somaliland Recognition Day.', status: 'Recognition Day campaign · Dec 2025', href: '/design' },
+  { number: '05', name: 'Graphic design', type: 'VISUAL DESIGN', description: 'Graphic design and visual communication. Selected pieces will be added to the portfolio.', status: 'Portfolio selection in progress', href: '/about#design' },
 ];
 const skillAreas = [
   { area: 'SOFTWARE DEVELOPMENT', name: 'Build digital products', detail: 'Web applications, mobile app prototypes, databases and workflow tools.', tools: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Git & GitHub'] },
