@@ -26,14 +26,14 @@ export default function Home() {
         <span className="magazine-volume">VOL. 01 · IDEAS & CREATIVE WORK</span>
         <div className="magazine-header-actions">
           <nav className="magazine-nav" aria-label="Primary navigation">
-            <a href="/projects">Projects</a><a href="/#skills">Skills</a><a href="/about">About</a><a href="/aviation">Aviation</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
+            <a href="/projects">Projects</a><a href="/#skills">Skills</a><a href="/about">About</a><a href="/aviation">Aviation</a><a href="/relax">Off duty</a><a href="/books">Books</a><a href="/contact">Contact</a>
           </nav>
           <a className="magazine-top-cv" href="/cv.pdf" download>CV ↓</a>
           <ThemeToggle/>
           <details className="magazine-mobile-menu">
             <summary>Menu</summary>
             <nav aria-label="Mobile primary navigation">
-              <a href="/projects">Projects</a><a href="/#skills">Skills</a><a href="/about">About</a><a href="/aviation">Aviation</a><a href="/relax">Off duty</a><a href="/contact">Contact</a>
+              <a href="/projects">Projects</a><a href="/#skills">Skills</a><a href="/about">About</a><a href="/aviation">Aviation</a><a href="/relax">Off duty</a><a href="/books">Books</a><a href="/contact">Contact</a>
               <a href="/cv.pdf" download>Download CV ↓</a>
             </nav>
           </details>
@@ -67,7 +67,7 @@ export default function Home() {
       <p className="section-tag">03 / ABOUT</p><div><h2>The person <em>behind the projects.</em></h2><p>I'm Mohamed Amiin Abdirahman Hassan, a developer, graphic designer and problem-solver based in Somaliland. I build software, create visual work and make practical tools, drawing on my background in accounting. By profession I am an air traffic controller.</p><figure className="story-photo home-about-photo"><img src="/images/projects-office.jpg" alt="Mohamed Amiin at a desk with a laptop and notebook" width={896} height={1195} loading="lazy"/><figcaption>Planning and building new projects</figcaption></figure></div>
     </section>
     <section id="experience" className="section container" data-reveal><p className="section-tag">04 / EXPERIENCE</p><div><h2>Experience behind <em>the ideas.</em></h2><p className="section-intro">My work spans finance and air traffic control. Both shape how I approach problems, people and systems.</p><div className="timeline">{experience.map((item,i)=><article className="timeline-item" data-reveal style={{'--i':i} as CSSProperties} key={item.title}><span className="item-date">{item.date}</span><div><h3>{item.title}</h3><p className="muted">{item.place}</p><p>{item.detail}</p></div></article>)}</div><p className="section-intro"><a href="/aviation">My aviation career, training and qualifications ↗</a></p></div></section>
-    <section className="section container" data-reveal><p className="section-tag">05 / OFF DUTY</p><div><h2>Beyond <em>work.</em></h2><p>Away from projects and work, I enjoy chess, films and books — different ways to keep curiosity alive. <a href="/books">Books I recommend ↗</a> · <a href="/relax">Need a pause? Sit in the meadow ↗</a></p></div></section>
+    <section className="section container" data-reveal><p className="section-tag">05 / OFF DUTY</p><div><h2>Beyond <em>work.</em></h2><p>Away from projects and work, I enjoy chess, films and books — different ways to keep curiosity alive.</p><div className="actions"><a className="primary" href="/books">Books I recommend ↗</a><a className="secondary" href="/relax">Sit in the meadow ↗</a></div></div></section>
     <section id="contact" className="contact"><div className="container contact-inner" data-reveal><p className="section-tag">06 / CONTACT</p><h2>Let's make<br/><em>contact.</em></h2><p>For development, design, business tools or professional collaborations, get in touch.</p><div className="actions"><a className="primary" href="/contact">Get in touch ↗</a><a className="secondary" href={whatsApp} target="_blank" rel="noopener noreferrer">WhatsApp ↗<span className="sr-only"> (opens WhatsApp in a new tab)</span></a><a className="secondary" href="/cv.pdf" download>Download CV ↓</a></div></div></section>
 
   </main>;
