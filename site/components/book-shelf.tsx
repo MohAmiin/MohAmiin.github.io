@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 
 export type Book = {
@@ -28,6 +28,17 @@ function Action({ b }: { b: Book }) {
 
 export default function BookShelf({ books, holy }: { books: Book[]; holy: ReactNode }) {
   const [f, setF] = useState<Book['group'] | 'all'>('all');
+  const [open, setOpen] = useState<Book | null>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const lastRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!open) return;
+    closeRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(null); };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = ''; lastRef.current?.focus(); };
+  }, [open]);
   const shown = books.filter(b => f === 'all' || b.group === f);
   return <>
     <div className="bk-filters" role="group" aria-label="Filter books">
@@ -36,7 +47,7 @@ export default function BookShelf({ books, holy }: { books: Book[]; holy: ReactN
     {(f === 'all' || f === 'islam') && holy}
     <div className="bk-shelf">
       {shown.map(b => <article className="bk" key={b.title}>
-        <div className="bk-stand"><Cover b={b} /></div>
+        <div className="bk-stand"><button type="button" className="bk-open" onClick={e => { lastRef.current = e.currentTarget; setOpen(b); }} aria-label={`Open ${b.title}`}><Cover b={b} /></button></div>
         <span className="bk-cat">{b.label}</span>
         <h2>{b.title}</h2>
         <p className="bk-by">{b.author}</p>
@@ -44,5 +55,18 @@ export default function BookShelf({ books, holy }: { books: Book[]; holy: ReactN
         <Action b={b} />
       </article>)}
     </div>
+    {open && <div className="bk-zoom" role="dialog" aria-modal="true" aria-labelledby="bk-zoom-title" onClick={() => setOpen(null)}>
+      <div className="bk-zoom-card" onClick={e => e.stopPropagation()}>
+        <div className="bk-zoom-cover">{open.cover ? <img src={open.cover} alt={`Cover of ${open.title}`} /> : <Cover b={open} />}</div>
+        <div className="bk-zoom-body">
+          <span className="bk-cat">{open.label}</span>
+          <h2 id="bk-zoom-title">{open.title}</h2>
+          <p className="bk-by">{open.author}</p>
+          <p className="bk-about">{open.about}</p>
+          <Action b={open} />
+        </div>
+        <button type="button" ref={closeRef} className="bk-zoom-close" onClick={() => setOpen(null)} aria-label="Close">×</button>
+      </div>
+    </div>}
   </>;
 }
