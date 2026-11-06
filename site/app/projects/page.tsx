@@ -5,7 +5,7 @@ const projects=[
 {name:'Jareeye Moto Delivery',tag:'MOBILE PRODUCT',desc:'A delivery-app prototype connecting customers with local riders. Market validation is in progress.',status:'Prototype',href:'/projects/jareeye'},
 {name:'Websites & business tools',tag:'WEB DEVELOPMENT',desc:'Practical digital services, responsive sites and workflow tools for organisations.',status:'Selected work',href:'/contact'},
 {name:'Excel tools & templates',tag:'BUSINESS & FINANCE',desc:'Custom accounting and budget spreadsheets, with reusable free templates being prepared for download.',status:'Free templates in preparation',href:'/about#finance'},
-{name:'Graphic design & visual work',tag:'GRAPHIC DESIGN',desc:'Posters and social-media design, starting with a campaign for Somaliland Recognition Day, 26 December 2025.',status:'Recognition Day campaign · Dec 2025',href:'/design'}
+{name:'Graphic design & visual work',tag:'GRAPHIC DESIGN',desc:'Graphic design and visual communication. Selected work is being prepared for this portfolio.',status:'Portfolio selection in progress',href:'/about#design'}
 ];
 export default function Projects(){return <main className="container detail-page projects-page">
   <header className="projects-intro"><div><p className="eyebrow">PROJECTS</p><h1 className="detail-title">What I <em>create.</em></h1></div><p className="detail-lead">Software, design and practical tools inspired by real needs — a portfolio of what I build and create.</p></header>
