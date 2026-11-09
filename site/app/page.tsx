@@ -24,7 +24,7 @@ export default function Home() {
   return <main>
     <section id="home" className="magazine-hero">
       <header className="magazine-topbar">
-        <span className="magazine-volume">VOL. 01 · IDEAS & CREATIVE WORK</span>
+        <span className="magazine-volume">VOL. 01<span className="vol-more"> · IDEAS & CREATIVE WORK</span></span>
         <div className="magazine-header-actions">
           <nav className="magazine-nav" aria-label="Primary navigation">
             <a href="/projects">Projects</a><a href="/#skills">Skills</a><a href="/about">About</a><a href="/aviation">Aviation</a><OffDutyMenu variant="magazine"/><a href="/contact">Contact</a>
