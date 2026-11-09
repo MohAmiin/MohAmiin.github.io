@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><SiteHeader/>{children}<SiteFooter/><ScrollReveal/>
+  return <html lang="en"><body><a className="skip-link" href="#main-content">Skip to content</a><SiteHeader/><div id="main-content" tabIndex={-1}>{children}</div><SiteFooter/><ScrollReveal/>
     {/* Cloudflare Web Analytics (DNS-only zone, so the beacon is installed manually) */}
     <Script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0c392b83026b4e0887c6f296eee02437"}' strategy="afterInteractive"/>
   </body></html>;

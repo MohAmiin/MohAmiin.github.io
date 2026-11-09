@@ -56,7 +56,14 @@ export default function BookShelf({ books, holy }: { books: Book[]; holy: ReactN
       </article>)}
     </div>
     {open && <div className="bk-zoom" role="dialog" aria-modal="true" aria-labelledby="bk-zoom-title" onClick={() => setOpen(null)}>
-      <div className="bk-zoom-card" onClick={e => e.stopPropagation()}>
+      <div className="bk-zoom-card" onClick={e => e.stopPropagation()} onKeyDown={e => {
+        if (e.key !== 'Tab') return;
+        const f = Array.from(e.currentTarget.querySelectorAll<HTMLElement>('a[href],button'));
+        if (!f.length) return;
+        const first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }}>
         <div className="bk-zoom-cover">{open.cover ? <img src={open.cover} alt={`Cover of ${open.title}`} /> : <Cover b={open} />}</div>
         <div className="bk-zoom-body">
           <span className="bk-cat">{open.label}</span>
