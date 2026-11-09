@@ -653,12 +653,20 @@ html.lenis,html.lenis body{height:auto}
 .lenis.lenis-stopped{overflow:hidden}
 .scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1000;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
 html:not(.gsap-on) .scroll-progress{display:none}
-.magazine-word span{display:inline-block}
-.motion-pending .magazine-word,.motion-pending .magazine-photo,.motion-pending .magazine-columns,.motion-pending .magazine-credential{animation:none!important;opacity:0}
-.gsap-on .magazine-word,.gsap-on .magazine-photo,.gsap-on .magazine-columns{animation:none!important}
-.gsap-on .project[data-reveal],.gsap-on .timeline-item[data-reveal],.gsap-on .glance-strip[data-reveal]{translate:none}
 .motion-in{transition:none!important}
 .project{position:relative}
 .project::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .5s cubic-bezier(.2,.8,.2,1);pointer-events:none}
 .project:hover::after,.project:focus-visible::after{transform:scaleX(1)}
 @media(prefers-reduced-motion:reduce){.scroll-progress{display:none}.project::after{transition:none}}
+/* Hero intro in CSS (~1.3s): visible from first paint, no script needed. Letters rise one by one;
+   the portrait only moves (never fades) so it counts as painted straight away. */
+.magazine-word{animation:none}
+.magazine-word span{display:inline-block;animation:mag-letter .6s cubic-bezier(.2,.7,.2,1) calc(var(--l,0)*40ms) both}
+@keyframes mag-letter{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:none}}
+.magazine-photo{animation:mag-photo-slide .7s cubic-bezier(.2,.7,.2,1) .3s both}
+@keyframes mag-photo-slide{from{transform:translate(-50%,40px)}to{transform:translate(-50%,0)}}
+.magazine-columns{animation:magazine-rise .5s ease-out .45s both}
+@media(max-width:700px){.magazine-photo{animation:mag-photo-slide-m .7s cubic-bezier(.2,.7,.2,1) .3s both}.magazine-columns{animation:magazine-rise .5s ease-out .45s both}}
+@keyframes mag-photo-slide-m{from{translate:0 40px}to{translate:0 0}}
+@media(prefers-reduced-motion:reduce){.magazine-word span,.magazine-photo,.magazine-columns{animation:none!important}}
+.gsap-on .project[data-reveal],.gsap-on .timeline-item[data-reveal],.gsap-on .glance-strip[data-reveal],.gsap-on .section[data-reveal],.gsap-on .contact-inner[data-reveal]{translate:none}

@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 
 // Site-wide motion: Lenis smooth scrolling (mouse wheel and trackpad only; touch keeps native
 // scrolling), a gold reading-progress bar, and GSAP + ScrollTrigger animations for the homepage
-// hero, section headings, project and skill rows, and the library shelf.
+// hero depth effect, section headings, project and skill rows, and the library shelf.
 //
 // The libraries are loaded from cdnjs/unpkg at fixed versions, so the site needs no new npm
 // packages. If they fail to load, the existing CSS animations and ScrollReveal still run.
@@ -67,18 +67,18 @@ export default function Motion() {
   useEffect(() => {
     const root = document.documentElement;
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (reduce.matches) { root.classList.remove('motion-pending'); return; }
+    if (reduce.matches) return;
     let cancelled = false;
     let tick: ((t: number) => void) | null = null;
     let onClick: ((e: MouseEvent) => void) | null = null;
 
     loadLibs().then(ok => {
       const w = window as Win;
-      if (cancelled || !ok) { root.classList.remove('motion-pending'); return; }
+      if (cancelled || !ok) return;
       root.classList.add('gsap-on');
       if (!w.Lenis) return;
       const lenis = new w.Lenis({
-        lerp: 0.1,
+        lerp: 0.15,
         // Leave scrolling inside dialogs and menus to the browser.
         prevent: (node: Element) => node.classList?.contains('bk-zoom') || node.hasAttribute?.('data-lenis-prevent'),
       });
@@ -99,7 +99,7 @@ export default function Motion() {
         if (!target) return;
         e.preventDefault();
         history.pushState(null, '', url.hash);
-        lenis.scrollTo(target, { onComplete: () => target.focus({ preventScroll: true }) });
+        lenis.scrollTo(target, { duration: 0.8, onComplete: () => target.focus({ preventScroll: true }) });
       };
       document.addEventListener('click', onClick);
     });
@@ -126,43 +126,26 @@ export default function Motion() {
       if (cancelled || !ok) return;
       const w = window as Win;
       const gsap = w.gsap, ST = w.ScrollTrigger;
-      const root = document.documentElement;
-      // Only run the hero intro if the hero is still waiting for it (it gives up after 3s).
-      let playIntro = root.classList.contains('motion-pending');
 
       ctx = gsap.context(() => {
         // Gold reading-progress bar.
-        if (bar.current) gsap.fromTo(bar.current, { scaleX: 0 }, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.3 } });
+        if (bar.current) gsap.fromTo(bar.current, { scaleX: 0 }, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: true } });
 
-        const mm = gsap.matchMedia();
-        mm.add({ wide: '(min-width: 701px)' }, (c: any) => {
-          // 1. Hero intro: AMIIN rises letter by letter, then the portrait, then the text.
-          const hero = document.querySelector('.magazine-hero');
-          if (hero && playIntro) {
-            playIntro = false; // play once, not again when the window crosses a breakpoint
-            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-            tl.from('.magazine-word span', { yPercent: 100, autoAlpha: 0, duration: 1, stagger: 0.08 })
-              .from('.magazine-photo img', { y: 70, autoAlpha: 0, duration: 1.1 }, '-=0.6')
-              .from('.magazine-rule', { scaleX: 0, transformOrigin: '0 50%', duration: 0.6 }, '-=0.6')
-              .from('.magazine-identity h1, .magazine-identity p, .magazine-quote, .magazine-actions a, .magazine-email', { y: 24, autoAlpha: 0, duration: 0.7, stagger: 0.07 }, '-=0.6')
-              .from('.magazine-credential, .magazine-topbar', { autoAlpha: 0, duration: 0.6 }, '-=0.4');
-          }
-          root.classList.remove('motion-pending');
-
-          // 2. Depth on scroll (desktop): the name drifts down while the portrait drifts up.
-          if (hero && c.conditions.wide) {
-            const st = { trigger: hero, start: 'top top', end: 'bottom top', scrub: true };
-            gsap.to('.magazine-word', { yPercent: 30, ease: 'none', scrollTrigger: st });
-            gsap.to('.magazine-photo img', { yPercent: -8, ease: 'none', scrollTrigger: { ...st } });
-          }
+        // Depth on scroll (desktop only): the name drifts down while the portrait drifts up.
+        // The hero intro itself is pure CSS, so it never waits for these scripts.
+        const hero = document.querySelector('.magazine-hero');
+        if (hero) gsap.matchMedia().add('(min-width: 701px)', () => {
+          const st = { trigger: hero, start: 'top top', end: 'bottom top', scrub: true };
+          gsap.to('.magazine-word', { yPercent: 30, ease: 'none', scrollTrigger: st });
+          gsap.to('.magazine-photo img', { yPercent: -8, ease: 'none', scrollTrigger: { ...st } });
         });
 
         // 3. Section headings slide up from behind a clean edge.
         gsap.utils.toArray('.section h2, .contact h2').forEach((h: Element) => {
           gsap.fromTo(h,
-            { clipPath: 'inset(-10% -5% 100% -5%)', y: 40 },
-            { clipPath: 'inset(-10% -5% -15% -5%)', y: 0, duration: 1, ease: 'power4.out',
-              scrollTrigger: { trigger: h, start: 'top 88%', once: true },
+            { clipPath: 'inset(-10% -5% 100% -5%)', y: 24 },
+            { clipPath: 'inset(-10% -5% -15% -5%)', y: 0, duration: 0.6, ease: 'power3.out',
+              scrollTrigger: { trigger: h, start: 'top 92%', once: true },
               onComplete: () => gsap.set(h, { clearProps: 'clipPath,transform' }) });
         });
 
@@ -172,15 +155,15 @@ export default function Motion() {
           if (!items.length) return;
           gsap.set(items, from);
           ST.batch(items, {
-            start: 'top 90%', once: true,
+            start: 'top 95%', once: true,
             onEnter: (batch: Element[]) => {
               batch.forEach(el => el.classList.add('motion-in'));
-              gsap.to(batch, { x: 0, y: 0, rotationY: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out', stagger: 0.09, overwrite: true, onComplete: done(batch) });
+              gsap.to(batch, { x: 0, y: 0, rotationY: 0, autoAlpha: 1, duration: 0.5, ease: 'power3.out', stagger: 0.05, overwrite: true, onComplete: done(batch) });
             },
           });
         };
-        cascade('.glance-strip > div', { y: 24, autoAlpha: 0 });
-        cascade('.project, .timeline-item', { y: 36, autoAlpha: 0 });
+        cascade('.glance-strip > div', { y: 20, autoAlpha: 0 });
+        cascade('.project, .timeline-item', { y: 20, autoAlpha: 0 });
         // 5. Library: books slide onto the shelf.
         cascade('.bk-holy', { y: 30, autoAlpha: 0 });
         cascade('.bk', { x: -36, rotationY: -30, transformPerspective: 800, autoAlpha: 0 });
