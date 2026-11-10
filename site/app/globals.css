@@ -685,3 +685,17 @@ html:not(.gsap-on) .scroll-progress{display:none}
 /* Phone hero: the portrait box matches the square picture, so there's no empty band above the head */
 .magazine-photo picture{display:contents}
 @media(max-width:700px){.magazine-photo{width:min(100% - 32px,360px);height:auto;aspect-ratio:1/1}}
+/* Header logo: "M.Amiin" signature wordmark (Bodoni, italic Amiin, gold dot). A gold rule draws
+   across on hover/focus and a small "← Home" caption says where it goes. */
+.topbar .brand{display:inline-flex;flex-direction:column;align-items:flex-start;gap:5px;line-height:1;text-decoration:none;color:var(--ink);letter-spacing:0}
+.topbar .brand-mark{font:400 30px/1 'Bodoni Moda',Didot,Georgia,serif;letter-spacing:-.02em;color:var(--ink)}
+.topbar .brand-mark i{font-style:italic;font-weight:600}
+.topbar .brand-dot{display:inline-block;width:.2em;height:.2em;border-radius:50%;background:var(--accent);margin:0 .06em 0 .04em;transition:transform .3s}
+.topbar .brand-rule{display:block;align-self:stretch;height:1px;background:var(--accent);transform:scaleX(.35);transform-origin:0 50%;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.topbar .brand-home{font:500 12px/1 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.topbar .brand-arrow{display:inline-block;transition:transform .25s}
+.topbar .brand:hover .brand-rule,.topbar .brand:focus-visible .brand-rule{transform:scaleX(1)}
+.topbar .brand:hover .brand-dot,.topbar .brand:focus-visible .brand-dot{transform:scale(1.35)}
+.topbar .brand:hover .brand-home,.topbar .brand:focus-visible .brand-home{color:var(--accent)}
+.topbar .brand:hover .brand-arrow,.topbar .brand:focus-visible .brand-arrow{transform:translateX(-4px)}
+@media(prefers-reduced-motion:reduce){.topbar .brand-rule,.topbar .brand-dot,.topbar .brand-arrow{transition:none}}
