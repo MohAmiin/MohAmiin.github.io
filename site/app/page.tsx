@@ -42,7 +42,10 @@ export default function Home() {
       </header>
       <div className="magazine-word" aria-hidden="true">{'AMIIN'.split('').map((l,i)=><span key={i} style={{'--l':i} as CSSProperties}>{l}</span>)}</div>
       <figure className="magazine-photo">
-        <img src="/images/portrait-landing-hero-brown.webp" alt="Mohamed Amiin in a brown suit, white shirt, brown tie and glasses" width={1254} height={1254} fetchPriority="high"/>
+        <picture>
+          <source media="(max-width: 700px)" srcSet="/images/portrait-landing-hero-brown-720.webp"/>
+          <img src="/images/portrait-landing-hero-brown.webp" alt="Mohamed Amiin in a brown suit, white shirt, brown tie and glasses" width={1254} height={1254} fetchPriority="high"/>
+        </picture>
       </figure>
       <div className="magazine-columns">
         <div className="magazine-identity">
