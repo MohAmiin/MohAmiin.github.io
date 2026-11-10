@@ -11,7 +11,10 @@ export default function SiteHeader() {
   // Mark the page the visitor is on, so the menu shows where they are.
   const cur = (href: string) => (!href.startsWith('/#') && pathname.startsWith(href) ? 'page' as const : undefined);
   return <header className="topbar container">
-    <Link className="brand" href="/">M.AMIIN</Link>
+    <Link className="brand" href="/" aria-label="M.AMIIN, back to the homepage">
+      <span className="brand-mark" aria-hidden="true">M<span className="brand-dot">.</span>AMIIN</span>
+      <span className="brand-home" aria-hidden="true"><span className="brand-arrow">←</span> Home</span>
+    </Link>
     <nav aria-label="Primary navigation">
       {before.map(([href, name]) => <Link key={href} href={href} aria-current={cur(href)}>{name}</Link>)}
       <OffDutyMenu variant="topbar" />
