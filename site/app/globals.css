@@ -685,3 +685,12 @@ html:not(.gsap-on) .scroll-progress{display:none}
 /* Phone hero: the portrait box matches the square picture, so there's no empty band above the head */
 .magazine-photo picture{display:contents}
 @media(max-width:700px){.magazine-photo{width:min(100% - 32px,360px);height:auto;aspect-ratio:1/1}}
+/* Header logo reads as a link: gold dot, a small "← Home" caption, and a hover/focus state */
+.topbar .brand{display:inline-flex;flex-direction:column;align-items:flex-start;gap:3px;line-height:1;text-decoration:none;transition:color .25s}
+.topbar .brand-home{font:500 12px/1 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .25s}
+.topbar .brand-arrow{display:inline-block;transition:transform .25s}
+.topbar .brand:hover .brand-mark,.topbar .brand:focus-visible .brand-mark{color:var(--accent)}
+.topbar .brand:hover .brand-home,.topbar .brand:focus-visible .brand-home{color:var(--accent)}
+.topbar .brand:hover .brand-arrow,.topbar .brand:focus-visible .brand-arrow{transform:translateX(-4px)}
+.topbar .brand-mark{transition:color .25s}
+@media(prefers-reduced-motion:reduce){.topbar .brand-arrow{transition:none}}
