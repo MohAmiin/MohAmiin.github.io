@@ -45,7 +45,7 @@ export default function Books() {
     <h1 className="detail-title">My <em>Library.</em></h1>
     <p className="detail-lead">The books I recommend: the ones that shaped how I build, think and work, starting with the Holy Qur’an.</p>
     <figure className="lib-hero" data-reveal>
-      <img src="/images/library-shelf.webp" srcSet="/images/library-shelf-1200.webp 1200w, /images/library-shelf.webp 2400w" sizes="(max-width: 1220px) 100vw, 1160px" width={2400} height={1000} decoding="async" fetchPriority="high"
+      <img src="/images/library-shelf.webp" width={2400} height={1000} decoding="async" fetchPriority="high"
         alt="A walnut shelf against a dark navy wall. The Holy Qur'an rests first, on a wooden stand, followed by eight books: Nahjul Balagha, Riyad as-Salihin, An-Nawawi's Forty Hadith, The Sealed Nectar, Purification of the Heart, Man's Search for Meaning, Deep Work and Meditations." />
     </figure>
     <BookShelf books={books} holy={holy} />
