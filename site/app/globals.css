@@ -672,3 +672,8 @@ html:not(.gsap-on) .scroll-progress{display:none}
 .gsap-on .project[data-reveal],.gsap-on .timeline-item[data-reveal],.gsap-on .glance-strip[data-reveal],.gsap-on .section[data-reveal],.gsap-on .contact-inner[data-reveal]{translate:none}
 /* Phone hero header: keep the theme toggle and menu on screen (the volume line gives way first) */
 @media(max-width:700px){.magazine-volume{flex-shrink:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;letter-spacing:.13em}.magazine-volume .vol-more{display:none}.magazine-header-actions{flex-shrink:0}.magazine-hero .theme-toggle{min-width:40px;min-height:40px;font-size:16px;line-height:1}.magazine-hero .theme-toggle .tt-label{display:none}}
+/* Library: 3D shelf banner (rendered in Blender), fading into the page's navy */
+.lib-hero{margin:32px 0 8px;border-radius:4px;overflow:hidden;background:#0B0F1A}
+.lib-hero img{display:block;width:100%;height:auto}
+[data-theme="light"] .lib-hero{box-shadow:0 20px 50px -20px rgba(11,15,26,.45)}
+@media(max-width:700px){.lib-hero{margin:24px 0 4px}}
