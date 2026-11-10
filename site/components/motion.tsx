@@ -163,7 +163,7 @@ export default function Motion() {
           });
         };
         cascade('.glance-strip > div', { y: 20, autoAlpha: 0 });
-        cascade('.project, .timeline-item', { y: 20, autoAlpha: 0 });
+        cascade('.project, .timeline-item, .pcard', { y: 20, autoAlpha: 0 });
         // 5. Library: books slide onto the shelf.
         cascade('.bk-holy', { y: 30, autoAlpha: 0 });
         cascade('.bk', { x: -36, rotationY: -30, transformPerspective: 800, autoAlpha: 0 });

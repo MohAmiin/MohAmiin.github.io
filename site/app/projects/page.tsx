@@ -1,16 +1,40 @@
-import Link from 'next/link';import { ScreenFrame } from '../../components/screenshot-gallery';import { aomsDashboard } from '../../components/aoms-screens';import type { Metadata } from 'next';import type { CSSProperties } from 'react';
-export const metadata:Metadata={title:'Projects | Mohamed Amiin'};
-const aomsHighlights=['Arrival & departure registers','Digital tower logbook','Aircraft on ground','Live tower board','Verified controller attribution'];
-const projects=[
-{name:'Jareeye Moto Delivery',tag:'MOBILE PRODUCT',desc:'A delivery-app prototype connecting customers with local riders. Market validation is in progress.',status:'Prototype',href:'/projects/jareeye'},
-{name:'Websites & business tools',tag:'WEB DEVELOPMENT',desc:'Practical digital services, responsive sites and workflow tools for organisations.',status:'Selected work',href:'/contact'},
-{name:'Excel tools & templates',tag:'BUSINESS & FINANCE',desc:'Custom accounting and budget spreadsheets, with reusable free templates being prepared for download.',status:'Free templates in preparation',href:'/about#finance'},
-{name:'Graphic design & visual work',tag:'GRAPHIC DESIGN',desc:'Graphic design and visual communication. Selected work is being prepared for this portfolio.',status:'Portfolio selection in progress',href:'/about#design'}
-];
-export default function Projects(){return <main className="container detail-page projects-page">
-  <header className="projects-intro"><div><p className="eyebrow">PROJECTS</p><h1 className="detail-title">What I <em>create.</em></h1></div><p className="detail-lead">Software, design and practical tools inspired by real needs — a portfolio of what I build and create.</p></header>
-  <figure className="framed-photo photo-wide projects-hero-photo"><img src="/images/projects-sunset.webp" alt="Mohamed Amiin developing software at a laptop" width={1672} height={941} fetchPriority="high"/><figcaption>Working on digital products</figcaption></figure>
-  <section className={aomsDashboard?'featured-case':'featured-case featured-solo'} data-reveal aria-labelledby="featured-aoms"><div className="featured-body"><p className="item-date">FEATURED CASE STUDY · 01 / SOFTWARE DEVELOPMENT</p><h2 id="featured-aoms">Airport Operations Management System</h2><p>A web platform for the control tower that replaces paper logbooks and movement registers with one accountable, real-time record of tower operations.</p><ul className="chips" aria-label="Key features">{aomsHighlights.map(h=><li key={h}>{h}</li>)}</ul><div className="featured-foot"><span className="status">Development complete for current scope</span><Link className="primary" href="/projects/aoms">Read the case study ↗</Link></div></div>
-    {aomsDashboard&&<figure className="featured-visual"><ScreenFrame shot={aomsDashboard} pendingLabel=""/><figcaption>Tower dashboard · demo data</figcaption></figure>}</section>
-  <div className="project-list">{projects.map((p,i)=><Link className="project-link" data-reveal style={{'--i':i} as CSSProperties} href={p.href} key={p.name}><span className="item-date">0{i+2} / {p.tag}</span><h2>{p.name}</h2><p>{p.desc}</p><span className="status">{p.status}</span><span className="project-arrow" aria-hidden="true">↗</span></Link>)}</div>
-</main>}
+import Link from 'next/link';
+import { ScreenFrame } from '../../components/screenshot-gallery';
+import { aomsDashboard } from '../../components/aoms-screens';
+import ProjectCard from '../../components/project-card';
+import { projects, mainLink } from '../../data/projects';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Projects | Mohamed Amiin',
+  description: 'Software, design and practical tools by Mohamed Amiin: the Airport Operations Management System, the Jareeye delivery app, websites, Excel tools and graphic design.',
+};
+
+// Project content lives in site/data/projects.ts.
+export default function Projects() {
+  const featured = projects.find(p => p.featured);
+  const rest = projects.filter(p => p !== featured);
+  return <main className="container detail-page projects-page">
+    <header className="projects-intro"><div><p className="eyebrow">PROJECTS</p><h1 className="detail-title">What I <em>create.</em></h1></div><p className="detail-lead">Software, design and practical tools inspired by real needs — a portfolio of what I build and create.</p></header>
+    <figure className="framed-photo photo-wide projects-hero-photo"><img src="/images/projects-sunset.webp" alt="Mohamed Amiin developing software at a laptop" width={1672} height={941} fetchPriority="high"/><figcaption>Working on digital products</figcaption></figure>
+
+    {featured && <section className={aomsDashboard ? 'featured-case' : 'featured-case featured-solo'} data-reveal aria-labelledby="featured-case-title">
+      <div className="featured-body">
+        <p className="item-date">FEATURED CASE STUDY · 01 / {featured.type}</p>
+        <h2 id="featured-case-title">{featured.name}</h2>
+        <p>{featured.description}</p>
+        {featured.highlights && <ul className="chips" aria-label="Key features">{featured.highlights.map(h => <li key={h}>{h}</li>)}</ul>}
+        {featured.stack.length > 0 && <ul className="tags" aria-label="Tools and technologies">{featured.stack.map(s => <li key={s}>{s}</li>)}</ul>}
+        <div className="featured-foot">
+          <p className={`pill pill-${featured.status.tone}`}><span className="pill-dot" aria-hidden="true"/>{featured.status.label}</p>
+          {mainLink(featured) && <Link className="primary" href={mainLink(featured)}>Read the case study ↗</Link>}
+        </div>
+      </div>
+      {aomsDashboard && <figure className="featured-visual"><ScreenFrame shot={aomsDashboard} pendingLabel=""/><figcaption>Tower dashboard · demo data</figcaption></figure>}
+    </section>}
+
+    <section aria-label="More projects" className="pgrid">
+      {rest.map((p, i) => <ProjectCard key={p.slug} p={p} index={i + 2} />)}
+    </section>
+  </main>;
+}
