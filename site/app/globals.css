@@ -812,3 +812,36 @@ html[data-theme="light"]{--tone-done:#1F7A5C;--tone-early:#4C5F86}
 button.fm-pick{font:500 14px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02em;cursor:pointer}
 .fm-links a{white-space:nowrap}
 @media(max-width:600px){.fm-poster{padding:22px 18px 18px}.fm-links{gap:12px;letter-spacing:.06em}}
+/* Homepage hero: airliner flight (components/hero-flight.tsx), latest-updates strip, Arabic name */
+.magazine-hero{--pl-top:#2A3550;--pl-mid:#1A2236;--pl-bot:#121827;--pl-far:#141A2A;--pl-stab:#161D2E;--pl-wing:#1C2438;--pl-eng:#232C42;--pl-glint:#D9B26A;--pl-glint2:#F4EFE3;--pl-win:#D9B26A;--pl-trail:244,239,227;--pl-op:.9}
+[data-theme="light"] .magazine-hero{--pl-top:#DCD4C3;--pl-mid:#D2C9B6;--pl-bot:#C8BEA9;--pl-far:#D6CEBE;--pl-stab:#D0C7B5;--pl-wing:#CBC2AF;--pl-eng:#C3B9A5;--pl-glint:#9A7432;--pl-glint2:#FFFFFF;--pl-win:#9A7432;--pl-trail:16,21,33;--pl-op:.8}
+.mag-sky{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse 60% 45% at 50% 38%,color-mix(in srgb,var(--mag-gold) 8%,transparent),transparent 70%)}
+.mag-flight{position:absolute;left:0;top:30%;width:115%;aspect-ratio:1000/300;animation:mag-fly 30s cubic-bezier(.35,.1,.45,.9) infinite;will-change:transform}
+.mag-plane{position:absolute;inset:0;width:100%;height:100%;opacity:var(--pl-op);filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+.mag-plane .pl-far{fill:var(--pl-far)}.mag-plane .pl-stab{fill:var(--pl-stab)}.mag-plane .pl-wing{fill:var(--pl-wing)}.mag-plane .pl-eng{fill:var(--pl-eng)}
+.mag-plane .pl-win{fill:var(--pl-win);opacity:.55}.mag-plane .pl-cockpit{fill:var(--pl-win);opacity:.7}.mag-plane .pl-lip{stroke:var(--pl-glint);stroke-opacity:.45}
+.mag-plane .pl-beacon{fill:#FF4A3D;animation:mag-beacon 1.4s steps(1) infinite}
+.mag-plane .pl-strobe{fill:#fff;opacity:0;animation:mag-strobe 1.8s infinite}
+.mag-trail{position:absolute;right:58%;top:66%;width:140%;height:10px;border-radius:10px;background:linear-gradient(90deg,transparent,rgba(var(--pl-trail),.05) 40%,rgba(var(--pl-trail),.16));filter:blur(3px)}
+@keyframes mag-fly{0%{transform:translate(-120%,22%) rotate(-5deg)}80%,100%{transform:translate(110%,-34%) rotate(-7deg)}}
+@keyframes mag-beacon{0%,60%{opacity:1}61%,100%{opacity:.15}}
+@keyframes mag-strobe{0%,4%{opacity:1}5%,100%{opacity:0}}
+@media(max-width:700px){.mag-flight{top:22%;width:160%}}
+@media(prefers-reduced-motion:reduce){.mag-flight{animation:none;transform:translate(-8%,4%) rotate(-6deg)}.mag-plane .pl-beacon,.mag-plane .pl-strobe{animation:none}}
+
+.mag-ticker{position:relative;z-index:8;display:flex;align-items:stretch;border-bottom:1px solid var(--mag-line);background:color-mix(in srgb,var(--mag-bg) 80%,transparent);backdrop-filter:blur(4px)}
+.mag-ticker-label{flex:none;display:flex;align-items:center;gap:8px;padding:12px 16px 12px clamp(24px,5vw,80px);border-right:1px solid var(--mag-line);background:var(--mag-bg);font:500 12px/1 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--mag-gold)}
+.mag-ticker-label i{width:7px;height:7px;background:var(--mag-gold);transform:rotate(45deg)}
+.mag-ticker-window{flex:1;min-width:0;overflow:hidden;display:flex;align-items:center}
+.mag-ticker-track{display:flex;gap:48px;padding-left:32px;white-space:nowrap;animation:mag-tick 48s linear infinite;font:400 14px/1 'Jost',sans-serif;color:var(--mag-muted)}
+.mag-ticker-track a{color:inherit;text-decoration:none}
+.mag-ticker-track a b{color:var(--mag-text);font-weight:500}
+.mag-ticker-track a small{font:500 12px 'DM Mono',monospace;letter-spacing:.12em;color:var(--mag-gold);margin-right:8px}
+.mag-ticker-track a:hover b,.mag-ticker-track a:focus-visible b{color:var(--mag-gold)}
+.mag-ticker:hover .mag-ticker-track,.mag-ticker:focus-within .mag-ticker-track{animation-play-state:paused}
+@keyframes mag-tick{to{transform:translateX(-50%)}}
+@media(min-width:701px){.magazine-word{top:124px}}
+@media(max-width:700px){.mag-ticker-label{padding-left:16px}}
+@media(prefers-reduced-motion:reduce){.mag-ticker-track{animation:none}}
+
+.magazine-ar{margin:0 0 8px;text-align:left;font:700 26px/1.2 'Amiri','Times New Roman',serif;color:var(--mag-gold)}

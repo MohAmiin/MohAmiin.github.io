@@ -1,0 +1,68 @@
+name: Preview screenshots (temporary)
+
+# TEMPORARY: builds main and this PR, screenshots key pages in both, and pushes the PNGs to the
+# `preview-shots` branch for review. Remove this file before merging.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  shots:
+    if: github.head_ref == 'content/films'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with: { ref: main, path: base }
+      - uses: actions/checkout@v7
+        with: { ref: '${{ github.event.pull_request.head.sha }}', path: head }
+      - uses: actions/setup-node@v7
+        with: { node-version: 22 }
+      - name: Build both versions
+        run: |
+          for d in base head; do (cd $d/site && npm ci --no-audit --no-fund && npm run build); done
+      - name: Install Playwright
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium
+      - name: Screenshot
+        run: |
+          (cd base/site/out && python3 -m http.server 8001 >/dev/null 2>&1 &)
+          (cd head/site/out && python3 -m http.server 8002 >/dev/null 2>&1 &)
+          sleep 2
+          mkdir -p shots
+          cat > /tmp/pw/shoot.js <<'EOF'
+          const { chromium } = require('playwright');
+          (async () => {
+            const b = await chromium.launch();
+            const pages = ['/', '/films/'];
+            const sizes = [['desk', 1280, 800], ['phone', 390, 844]];
+            for (const [tag, port] of [['before', 8001], ['after', 8002]])
+              for (const theme of ['dark', 'light'])
+                for (const [dev, w, h] of sizes) {
+                  const ctx = await b.newContext({ viewport: { width: w, height: h }, reducedMotion: 'reduce' });
+                  await ctx.addInitScript(t => { try { localStorage.setItem('portfolio-theme', t); } catch {} document.documentElement.dataset.theme = t; }, theme);
+                  const p = await ctx.newPage();
+                  for (const path of pages) {
+                    if (theme === 'light' && path !== '/') continue;
+                    await p.goto(`http://localhost:${port}${path}`, { waitUntil: 'networkidle' });
+                    await p.evaluate(() => document.fonts.ready);
+                    await p.waitForTimeout(800); await p.evaluate(() => document.getAnimations().forEach(a => { if (a.animationName === 'mag-fly') { a.pause(); a.currentTime = 11000; } }));
+                    const name = (path === '/' ? 'home' : path.replace(/\//g, '')) + `-${dev}-${theme}-${tag}.png`;
+                    await p.screenshot({ path: `shots/${name}`, fullPage: true });
+                  }
+                  await ctx.close();
+                }
+            await b.close();
+          })();
+          EOF
+          NODE_PATH=/tmp/pw/node_modules node /tmp/pw/shoot.js
+          ls shots | wc -l
+      - name: Push screenshots
+        run: |
+          cd shots
+          git init -q && git checkout -q -b preview-shots
+          git config user.name "github-actions" && git config user.email "github-actions@users.noreply.github.com"
+          git add . && git commit -q -m "Preview screenshots for ${{ github.event.pull_request.head.sha }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" preview-shots
