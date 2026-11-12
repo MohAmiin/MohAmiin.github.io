@@ -846,3 +846,6 @@ button.fm-pick{font:500 14px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02
 @media(prefers-reduced-motion:reduce){.mag-ticker-track{animation:none}}
 
 .magazine-ar{margin:0 0 8px;text-align:left;font:700 26px/1.2 'Amiri','Times New Roman',serif;color:var(--mag-gold)}
+.mag-plane .pl-cheat{fill:none;stroke:var(--pl-win);stroke-width:2.5;opacity:.85}
+.mag-plane .pl-title{font:600 15px 'Bodoni Moda',Didot,Georgia,serif;letter-spacing:3.5px;fill:var(--pl-win)}
+.mag-plane .pl-tail{font:italic 600 38px 'Bodoni Moda',Didot,Georgia,serif;fill:var(--pl-win)}
