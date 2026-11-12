@@ -1,5 +1,7 @@
 import { projects, mainLink } from '../data/projects';
 import { now } from '../data/now';
+import { updates } from '../data/updates';
+import HeroFlight from '../components/hero-flight';
 import type { CSSProperties } from 'react';
 import ThemeToggle from '../components/theme-toggle';
 import OffDutyMenu from '../components/off-duty-menu';
@@ -18,6 +20,7 @@ const skillAreas = [
 export default function Home() {
   return <main>
     <section id="home" className="magazine-hero">
+      <HeroFlight/>
       <header className="magazine-topbar">
         <span className="magazine-volume">VOL. 01<span className="vol-more"> · IDEAS & CREATIVE WORK</span></span>
         <div className="magazine-header-actions">
@@ -35,6 +38,12 @@ export default function Home() {
           </details>
         </div>
       </header>
+      <div className="mag-ticker" role="region" aria-label="Latest updates">
+        <span className="mag-ticker-label"><i aria-hidden="true"/>Latest</span>
+        <div className="mag-ticker-window"><div className="mag-ticker-track">
+          {[0, 1].map(copy => updates.map(u => <a key={`${copy}-${u.href}`} href={u.href} aria-hidden={copy ? true : undefined} tabIndex={copy ? -1 : undefined}><small>{u.tag}</small><b>{u.title}</b> · {u.detail}</a>))}
+        </div></div>
+      </div>
       <div className="magazine-word" aria-hidden="true">{'AMIIN'.split('').map((l,i)=><span key={i} style={{'--l':i} as CSSProperties}>{l}</span>)}</div>
       <figure className="magazine-photo">
         <picture>
@@ -44,6 +53,7 @@ export default function Home() {
       </figure>
       <div className="magazine-columns">
         <div className="magazine-identity">
+          <p className="magazine-ar" lang="ar" dir="rtl">محمد أمين</p>
           <h1>Mohamed Amiin<br/><em>Abdirahman Hassan.</em></h1>
           <div className="magazine-rule" aria-hidden="true"/>
           <p>I design visuals, develop software and create practical tools for everyday problems.</p>
