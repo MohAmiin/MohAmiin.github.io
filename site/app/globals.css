@@ -744,3 +744,36 @@ html[data-theme="light"]{--tone-done:#1F7A5C;--tone-early:#4C5F86}
 .now-strip a:hover{color:var(--accent)}
 @media(prefers-reduced-motion:reduce){.now-dot{animation:none}}
 .gsap-on .pcard[data-reveal]{translate:none}
+/* Fitness page: free workout plan */
+.fit-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:64px}
+.fit-intro .detail-lead{margin:0}
+.fit-plan{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;padding:48px;border:1px solid var(--line);background:var(--bg2)}
+.fit-pages{position:relative;aspect-ratio:1/1;max-width:460px;width:100%;justify-self:center}
+.fit-pages img{position:absolute;width:62%;height:auto;top:6%;left:19%;box-shadow:0 24px 48px -16px rgba(0,0,0,.55);border-radius:2px;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.fit-pages img:nth-child(1){transform:rotate(9deg) translate(26%,4%)}
+.fit-pages img:nth-child(2){transform:rotate(-8deg) translate(-26%,4%)}
+.fit-plan:hover .fit-pages img:nth-child(1){transform:rotate(12deg) translate(34%,2%)}
+.fit-plan:hover .fit-pages img:nth-child(2){transform:rotate(-11deg) translate(-34%,2%)}
+.fit-body{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.fit-body h2{margin:0;font:700 clamp(32px,4vw,48px)/1.05 'Playfair Display',Georgia,serif;letter-spacing:-.03em}
+.fit-body h2 em{display:block;font-style:italic;color:var(--accent);font-size:.6em;letter-spacing:-.01em;margin-top:8px}
+.fit-body p{margin:0;color:var(--muted);max-width:52ch}
+.fit-facts{list-style:none;margin:8px 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;width:100%}
+.fit-facts li{font-size:14px;color:var(--muted);padding:12px 0;border-top:1px solid var(--line)}
+.fit-facts b{display:block;font:700 28px/1 'Playfair Display',Georgia,serif;color:var(--ink);margin-bottom:4px}
+.fit-body .actions{margin-top:8px}
+.fit-size{font:500 12px/1.4 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.fit-week{margin-top:96px}
+.fit-week h2{margin:0 0 32px;font:700 clamp(32px,4vw,48px)/1.05 'Playfair Display',Georgia,serif;letter-spacing:-.03em}
+.fit-week h2 em{font-style:italic;color:var(--accent)}
+.fit-week ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.fit-week li{display:flex;flex-direction:column;gap:8px;padding:24px;border:1px solid var(--line);background:var(--bg2)}
+.fit-week li span{font:500 12px/1 'DM Mono',monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.fit-week li b{font:700 20px/1.2 'Playfair Display',Georgia,serif}
+.fit-week li small{font-size:14px;color:var(--muted)}
+.fit-note{margin:48px 0 0;padding:24px;border-left:2px solid var(--accent);background:var(--bg2);color:var(--muted);max-width:80ch}
+.fit-note b{color:var(--ink)}
+@media(max-width:960px){.fit-week ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){.fit-intro,.fit-plan{grid-template-columns:1fr;gap:32px}.fit-plan{padding:24px}.fit-intro{margin-bottom:40px}}
+@media(max-width:520px){.fit-week ol{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.fit-pages img{transition:none}}
