@@ -813,16 +813,17 @@ button.fm-pick{font:500 14px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02
 .fm-links a{white-space:nowrap}
 @media(max-width:600px){.fm-poster{padding:22px 18px 18px}.fm-links{gap:12px;letter-spacing:.06em}}
 /* Homepage hero: airliner flight (components/hero-flight.tsx), latest-updates strip, Arabic name */
-.magazine-hero{--pl-top:#2A3550;--pl-mid:#1A2236;--pl-bot:#121827;--pl-far:#141A2A;--pl-stab:#161D2E;--pl-wing:#1C2438;--pl-eng:#232C42;--pl-glint:#D9B26A;--pl-glint2:#F4EFE3;--pl-win:#D9B26A;--pl-trail:244,239,227;--pl-op:.9}
-[data-theme="light"] .magazine-hero{--pl-top:#DCD4C3;--pl-mid:#D2C9B6;--pl-bot:#C8BEA9;--pl-far:#D6CEBE;--pl-stab:#D0C7B5;--pl-wing:#CBC2AF;--pl-eng:#C3B9A5;--pl-glint:#9A7432;--pl-glint2:#FFFFFF;--pl-win:#9A7432;--pl-trail:16,21,33;--pl-op:.8}
+.magazine-hero{--pl-top:#34405E;--pl-mid:#222B44;--pl-bot:#141A2B;--pl-far:#1A2135;--pl-stab:#1C2338;--pl-belly:#161C2E;--pl-wing:#1E2640;--pl-eng-top:#3A4666;--pl-eng-bot:#1B2236;--pl-glint:#D9B26A;--pl-glint2:#F4EFE3;--pl-win:#D9B26A;--pl-trail:244,239,227;--pl-op:.92}
+[data-theme="light"] .magazine-hero{--pl-top:#DED6C6;--pl-mid:#D3CAB7;--pl-bot:#C4BAA5;--pl-far:#CFC6B4;--pl-stab:#CEC5B2;--pl-belly:#C6BCA8;--pl-wing:#CDC4B1;--pl-eng-top:#E4DCCD;--pl-eng-bot:#C2B8A3;--pl-glint:#9A7432;--pl-glint2:#FFFFFF;--pl-win:#9A7432;--pl-trail:16,21,33;--pl-op:.85}
 .mag-sky{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse 60% 45% at 50% 38%,color-mix(in srgb,var(--mag-gold) 8%,transparent),transparent 70%)}
 .mag-flight{position:absolute;left:0;top:30%;width:115%;aspect-ratio:1000/300;animation:mag-fly 30s cubic-bezier(.35,.1,.45,.9) infinite;will-change:transform}
 .mag-plane{position:absolute;inset:0;width:100%;height:100%;opacity:var(--pl-op);filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
-.mag-plane .pl-far{fill:var(--pl-far)}.mag-plane .pl-stab{fill:var(--pl-stab)}.mag-plane .pl-wing{fill:var(--pl-wing)}.mag-plane .pl-eng{fill:var(--pl-eng)}
-.mag-plane .pl-win{fill:var(--pl-win);opacity:.55}.mag-plane .pl-cockpit{fill:var(--pl-win);opacity:.7}.mag-plane .pl-lip{stroke:var(--pl-glint);stroke-opacity:.45}
+.mag-plane .pl-far{fill:var(--pl-far)}.mag-plane .pl-stab{fill:var(--pl-stab)}.mag-plane .pl-wing{fill:var(--pl-wing)}.mag-plane .pl-belly{fill:var(--pl-belly)}
+.mag-plane .pl-win{fill:var(--pl-win);opacity:.6}.mag-plane .pl-door{fill:none;stroke:var(--pl-win);stroke-opacity:.35}.mag-plane .pl-cockpit{fill:var(--pl-win);opacity:.75}
+.mag-plane .pl-lip{stroke:var(--pl-glint);stroke-opacity:.55}.mag-plane .pl-exhaust{stroke:var(--pl-bot)}
 .mag-plane .pl-beacon{fill:#FF4A3D;animation:mag-beacon 1.4s steps(1) infinite}
 .mag-plane .pl-strobe{fill:#fff;opacity:0;animation:mag-strobe 1.8s infinite}
-.mag-trail{position:absolute;right:58%;top:66%;width:140%;height:10px;border-radius:10px;background:linear-gradient(90deg,transparent,rgba(var(--pl-trail),.05) 40%,rgba(var(--pl-trail),.16));filter:blur(3px)}
+.mag-trail{position:absolute;right:47.5%;top:65%;width:140%;height:10px;border-radius:10px;background:linear-gradient(90deg,transparent,rgba(var(--pl-trail),.05) 40%,rgba(var(--pl-trail),.16));filter:blur(3px)}
 @keyframes mag-fly{0%{transform:translate(-120%,22%) rotate(-5deg)}80%,100%{transform:translate(110%,-34%) rotate(-7deg)}}
 @keyframes mag-beacon{0%,60%{opacity:1}61%,100%{opacity:.15}}
 @keyframes mag-strobe{0%,4%{opacity:1}5%,100%{opacity:0}}
