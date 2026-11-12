@@ -18,5 +18,6 @@ export default function Films() {
       <p className="detail-lead">{films.length} films I recommend, from mind-bending sci-fi to quiet true stories. Choose by mood, or let the page pick one for tonight.</p>
     </header>
     <FilmShelf />
+    <p className="fm-credit">Film posters from <a href="https://www.themoviedb.org" target="_blank" rel="noopener noreferrer">The Movie Database (TMDB)</a>. This site is not endorsed or certified by TMDB.</p>
   </main>;
 }

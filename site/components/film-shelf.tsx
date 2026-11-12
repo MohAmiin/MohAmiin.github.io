@@ -6,9 +6,14 @@ import { films, groups, type Film, type FilmGroup } from '../data/films';
 const keys = Object.keys(groups) as FilmGroup[];
 const id = (f: Film) => `film-${f.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
-// A typographic "poster" in the film's group colours (no copyrighted artwork).
+// The official poster from TMDB when there is one; otherwise (or if it fails to load) a
+// typographic cover in the film's group colours.
 function Poster({ f }: { f: Film }) {
   const g = groups[f.group];
+  const [failed, setFailed] = useState(false);
+  if (f.poster && !failed) return <div className="fm-poster fm-poster-img" aria-hidden="true">
+    <img src={`https://image.tmdb.org/t/p/w342/${f.poster}`} alt="" width={342} height={513} loading="lazy" decoding="async" onError={() => setFailed(true)} />
+  </div>;
   return <div className="fm-poster" style={{ '--p-bg': g.bg, '--p-ink': g.ink, '--p-ac': g.accent } as CSSProperties} aria-hidden="true">
     <span className="fm-p-group">{g.name}</span>
     <span className="fm-p-title">{f.title}</span>
