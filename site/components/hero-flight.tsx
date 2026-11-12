@@ -1,4 +1,4 @@
-// A large, original airliner silhouette (no airline branding) that climbs slowly across the
+// A large, original airliner in the fictional "MA Airlines" livery (Mohamed Amiin's own brand) that climbs slowly across the
 // homepage hero behind the name and portrait. Pure SVG + CSS animation: no JavaScript, cheap to
 // run, still for visitors who prefer reduced motion. Colours come from CSS variables so it
 // suits both the dark and the light hero.
@@ -37,6 +37,9 @@ export default function HeroFlight() {
         <path d="M150,121 L820,121 C900,121 958,129 978,146" fill="none" stroke="url(#mag-pl-glint)" strokeWidth="2" />
         <path className="pl-belly" d="M470,176 C520,186 640,186 690,176 Z" />
         <g className="pl-win">{windows.map(x => <rect key={x} x={x} y="133" width="6" height="8" rx="3" />)}</g>
+        <path className="pl-cheat" d="M160,147 L880,147 C915,148 945,150 968,154" />
+        <text className="pl-title" x="704" y="168">MA AIRLINES</text>
+        <text className="pl-tail" x="160" y="98" textAnchor="middle">MA</text>
         <rect className="pl-door" x="842" y="128" width="12" height="22" rx="3" />
         <rect className="pl-door" x="572" y="128" width="12" height="22" rx="3" />
         <path className="pl-cockpit" d="M906,131 L934,131 C944,132 952,136 956,141 L914,141 Z" />
