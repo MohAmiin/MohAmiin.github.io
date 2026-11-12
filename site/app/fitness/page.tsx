@@ -33,7 +33,7 @@ export default function Fitness() {
       </div>
       <div className="fit-body">
         <p className="pill pill-done"><span className="pill-dot" aria-hidden="true" />Free · PDF · 9 pages</p>
-        <h2 id="plan-title">4-Day Workout Plan <em>· Intense Edition</em></h2>
+        <h2 id="plan-title">4-Day Workout Plan <em>Intense Edition</em></h2>
         <p>A 6-week lifting block: hard training with real recovery built in. Every session lists sets, reps, rest and effort, with a picture of each machine so you know exactly what to use.</p>
         <ul className="fit-facts">
           <li><b>4</b> lift days</li><li><b>6</b> week block</li><li><b>23</b> exercises, all pictured</li><li><b>1</b> printable tracker</li>
