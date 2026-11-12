@@ -808,3 +808,7 @@ html[data-theme="light"]{--tone-done:#1F7A5C;--tone-early:#4C5F86}
 .fm-links a:hover,.fm-links a:focus-visible{color:var(--accent)}
 @media(max-width:600px){.fm-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.fm-body{padding:14px 14px 18px}.fm-body h2{font-size:20px}.fm-about{font-size:14px}.fm-poster{padding:14px}.fm-p-title{font-size:20px}.fm-p-year{font-size:20px}.fm.is-top{grid-column:1/-1;flex-direction:column}.fm.is-top .fm-poster{aspect-ratio:3/2}.fm-tools{align-items:stretch}.fm-pick{width:100%}}
 @media(prefers-reduced-motion:reduce){.fm{transition:none}.fm:hover{transform:none}}
+.fm-poster{padding:28px 24px 24px}
+button.fm-pick{font:500 14px/1 'DM Sans',system-ui,sans-serif;letter-spacing:.02em;cursor:pointer}
+.fm-links a{white-space:nowrap}
+@media(max-width:600px){.fm-poster{padding:22px 18px 18px}.fm-links{gap:12px;letter-spacing:.06em}}
