@@ -4,8 +4,8 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
 // "Off duty" groups the personal pages so the main menu stays at five items.
-export const offDutyLinks: [string, string][] = [['/library', 'My Library'], ['/relax', 'The meadow'], ['/relax#challenge-heading', 'Chess']];
-export const isOffDuty = (p: string | null) => !!p && (p.startsWith('/library') || p.startsWith('/relax'));
+export const offDutyLinks: [string, string][] = [['/library', 'My Library'], ['/relax', 'The meadow'], ['/relax#challenge-heading', 'Chess'], ['/fitness', 'Fitness']];
+export const isOffDuty = (p: string | null) => !!p && (p.startsWith('/library') || p.startsWith('/relax') || p.startsWith('/fitness'));
 
 export default function OffDutyMenu({ variant }: { variant: 'topbar' | 'magazine' }) {
   const ref = useRef<HTMLDetailsElement>(null);
