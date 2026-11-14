@@ -874,3 +874,5 @@ html:root .primary:hover,html:root .primary:focus-visible{background:var(--btn-b
 /* Hero (dark): a warm, lighter oxblood glow behind the portrait so the brown suit doesn't sink into the page */
 html:not([data-theme="light"]) .mag-sky{background:radial-gradient(ellipse 30% 46% at 50% 66%,rgba(120,64,68,.75),rgba(86,42,46,.35) 55%,transparent 80%)}
 @media(max-width:700px){html:not([data-theme="light"]) .mag-sky{background:radial-gradient(ellipse 60% 26% at 50% 30%,rgba(120,64,68,.75),rgba(86,42,46,.35) 55%,transparent 80%)}}
+/* Light meadow heading: the pale accent word failed AA on the pale dusk sky (was gold, 1.3:1); use the deep oxblood accent */
+html[data-theme="light"] .relax-content h1 em{color:var(--accent)}
