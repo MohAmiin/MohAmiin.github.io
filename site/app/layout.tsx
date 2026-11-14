@@ -7,7 +7,7 @@ import ScrollReveal from '../components/scroll-reveal';
 import Motion from '../components/motion';
 
 // 1200×630 social preview (public/og-image.jpg); metadataBase makes the URL absolute.
-const shareImage = { url: '/og-image.jpg', width: 1200, height: 630, alt: 'Mohamed Amiin, Air Traffic Controller & Software Developer, beside an outdoor portrait in a dark suit' };
+const shareImage = { url: '/og-image.jpg', width: 1200, height: 630, alt: 'Mohamed Amiin Abdirahman Hassan, Creator · Designer · Developer, in a brown suit and glasses beside the name AMIIN on an oxblood background' };
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mohamedamiin.com'),
