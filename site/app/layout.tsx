@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import './globals.css';
 import SiteHeader from '../components/site-header';
@@ -7,7 +7,7 @@ import ScrollReveal from '../components/scroll-reveal';
 import Motion from '../components/motion';
 
 // 1200×630 social preview (public/og-image.jpg); metadataBase makes the URL absolute.
-const shareImage = { url: '/og-image.jpg', width: 1200, height: 630, alt: 'Mohamed Amiin, Air Traffic Controller & Software Developer, beside an outdoor portrait in a dark suit' };
+const shareImage = { url: '/og-image.jpg', width: 1200, height: 630, alt: 'Mohamed Amiin Abdirahman Hassan, Creator · Designer · Developer, in a brown suit and glasses beside the name AMIIN on an oxblood background' };
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mohamedamiin.com'),
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
   description: 'Mohamed Amiin Abdirahman Hassan — software development, graphic design and practical business tools. Professional background in accounting and air traffic control.',
   openGraph: { title: 'Mohamed Amiin | Creator, Designer & Developer', description: 'I create, design and build: digital products, graphic design and practical business tools.', url: 'https://mohamedamiin.com/', siteName: 'Mohamed Amiin', locale: 'en_GB', type: 'website', images: [shareImage] },
   twitter: { card: 'summary_large_image', title: 'Mohamed Amiin | Creator, Designer & Developer', description: 'I create, design and build.', images: [shareImage] },
+};
+
+// Browser UI colour before the theme toggle runs: oxblood for dark, cream for light (ThemeToggle updates it on a manual choice).
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#2A1215' },
+    { media: '(prefers-color-scheme: light)', color: '#F5EFE3' },
+  ],
 };
 
 const FONTS = 'https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Amiri:wght@400;700&display=swap';
