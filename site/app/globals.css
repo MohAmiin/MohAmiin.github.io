@@ -879,3 +879,6 @@ html[data-theme="light"] .relax-content h1 em{color:var(--accent)}
 /* Arabic name above the English name: larger on tablet and desktop. Phones (≤700px) keep their current size.
    Needs .magazine-identity in the selector to beat .magazine-identity p, which sets the paragraph font. */
 @media(min-width:701px){.magazine-identity .magazine-ar{font-size:32px}}
+
+/* Theme switch: the new theme is revealed in a circle (see components/theme-toggle.tsx). */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
