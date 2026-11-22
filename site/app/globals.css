@@ -882,3 +882,16 @@ html[data-theme="light"] .relax-content h1 em{color:var(--accent)}
 
 /* Theme switch: the new theme is revealed in a circle (see components/theme-toggle.tsx). */
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+
+/* Jareeye project page: real app screens in phone frames (components/jareeye-screens.tsx) */
+.jx-section{margin:clamp(48px,7vw,80px) 0 40px}
+.jx-section h2{margin-bottom:28px}
+.jx-groups{display:flex;flex-direction:column;gap:40px}
+.jx-row{display:flex;gap:22px;overflow-x:auto;padding:6px 4px 18px;scroll-snap-type:x mandatory}
+.jx-shot{flex:0 0 clamp(180px,22vw,240px);margin:0;scroll-snap-align:start}
+.jx-phone{border-radius:26px;border:6px solid #0E0B0A;background:#0E0B0A;overflow:hidden;box-shadow:0 30px 60px -34px #000}
+.jx-phone img{display:block;width:100%;height:auto}
+.jx-dark{display:block}.jx-light{display:none}
+html[data-theme="light"] .jx-dark{display:none}html[data-theme="light"] .jx-light{display:block}
+.jx-shot figcaption{margin-top:12px;font-size:13.5px;line-height:1.45;color:var(--muted)}
+.jx-shot figcaption b{display:block;color:var(--ink);font-weight:600;margin-bottom:2px}

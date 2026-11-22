@@ -46,7 +46,7 @@ const offDuty = [
 // Per-project card look: code, colour, preview and short points. Unknown slugs get a default.
 const cardLook: Record<string, { code: string; tone: string; vis: string; points: string[] }> = {
   aoms: { code: 'AOMS', tone: 'c-ox', vis: 'aoms', points: ['Built for a real control tower, by a controller', 'Arrival & departure registers, digital tower logbook', 'Next.js and Supabase', 'Sample data shown — not yet in operational use'] },
-  jareeye: { code: 'JRY', tone: 'c-ink', vis: 'moto', points: ['Customers find nearby approved riders', 'Mobile app prototype', 'Testing the market in Hargeisa'] },
+  jareeye: { code: 'JRY', tone: 'c-ink', vis: 'jry', points: ['Customers find nearby approved riders', 'Mobile app prototype', 'Testing the market in Hargeisa'] },
   websites: { code: 'WEB', tone: 'c-cream', vis: 'web', points: ['Delivered through Kodaro', 'Fast, accessible, built to be found', 'Portfolios, company sites, landing pages'] },
   'excel-tools': { code: 'XLS', tone: 'c-deep', vis: 'xl', points: ['Business and personal finance managers', 'Somali instructions, English labels', 'Built on an accounting background'] },
   'graphic-design': { code: 'GFX', tone: 'c-rose', vis: 'gd', points: ['Photoshop, Illustrator, Figma, Canva', 'Logos, social posts, print', 'Full showcase coming to this site'] },
@@ -56,6 +56,12 @@ const tones = ['c-ox', 'c-ink', 'c-cream', 'c-deep', 'c-rose'];
 function Vis({ kind }: { kind: string }) {
   if (kind === 'aoms') return <div className="h4-vis v-aoms" aria-hidden="true">
     {[['FDB123', 'B738', 'HCMI → OMDB', 'ARR'], ['ETH456', 'DH8D', 'HCMI → HAAB', 'DEP'], ['UNO789', 'C130', 'HCMH → HCMI', 'ARR'], ['JET012', 'C208', 'HCMI → HCMH', 'DEP']].map(r => <div key={r[0]}>{r.map(c => <span key={c}>{c}</span>)}</div>)}
+  </div>;
+  if (kind === 'jry') return <div className="h4-vis v-phones" aria-hidden="true">
+    <img className="ph side" src="/images/jareeye/customer-home-light.webp" alt="" width={780} height={1688} loading="lazy" decoding="async" />
+    <img className="ph mid" src="/images/jareeye/tracker-dark.webp" alt="" width={780} height={1688} loading="lazy" decoding="async" />
+    <img className="ph side" src="/images/jareeye/rider-online-light.webp" alt="" width={780} height={1688} loading="lazy" decoding="async" />
+    <span className="v-note">Prototype · sample data</span>
   </div>;
   if (kind === 'moto') return <div className="h4-vis v-moto" aria-hidden="true"><svg viewBox="0 0 320 220" fill="none" preserveAspectRatio="xMidYMid slice"><path d="M0 70h320M0 150h320M90 0v220M220 0v220" stroke="rgba(245,239,227,.08)" /><path className="r" d="M40 180 C 90 180, 90 90, 160 100 S 250 50, 280 40" stroke="#F5EFE3" strokeWidth="2" /><circle cx="40" cy="180" r="7" fill="#C9958A" /><circle cx="280" cy="40" r="10" stroke="#F5EFE3" strokeWidth="2" /></svg></div>;
   if (kind === 'web') return <div className="h4-vis v-web" aria-hidden="true">{Array.from({ length: 6 }, (_, i) => <i key={i} />)}</div>;
