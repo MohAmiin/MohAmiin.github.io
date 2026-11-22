@@ -128,8 +128,8 @@ export default function Home() {
           <span className="h4-chip c2" aria-hidden="true"><b>Ai</b>Figma · Illustrator</span>
           <span className="h4-chip c3" aria-hidden="true"><b>✈</b>HCMI tower</span>
           <div className="h4-stamp" aria-hidden="true">
-            <svg viewBox="0 0 110 110"><defs><path id="h4-c" d="M55 55 m-40 0 a40 40 0 1 1 80 0 a40 40 0 1 1 -80 0" /></defs><text fontFamily="DM Mono, monospace" fontSize="8.5" letterSpacing="2.4" fill="#5C1A22"><textPath href="#h4-c">SOFTWARE · DESIGN · TOOLS · SOMALILAND ·</textPath></text></svg>
-            <b>01</b>
+            <svg viewBox="0 0 110 110"><defs><path id="h4-c" d="M55 55 m-40 0 a40 40 0 1 1 80 0 a40 40 0 1 1 -80 0" /></defs>{/* textLength stretches the phrase to exactly one lap of the circle (2π × 40 ≈ 251). */}
+            <text fontFamily="DM Mono, monospace" fontSize="9" fill="#5C1A22"><textPath href="#h4-c" textLength="249" lengthAdjust="spacing">{'SOFTWARE · DESIGN · TOOLS · S/LAND ·\u00A0'}</textPath></text></svg>
           </div>
         </div>
       </div>
