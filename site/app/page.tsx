@@ -54,7 +54,8 @@ const cardLook: Record<string, { code: string; tone: string; vis: string; points
 const tones = ['c-ox', 'c-ink', 'c-cream', 'c-deep', 'c-rose'];
 
 function Vis({ kind }: { kind: string }) {
-  if (kind === 'aoms') return <div className="h4-vis v-aoms" aria-hidden="true">
+  if (kind === 'aoms') return <div className="h4-vis v-shot" aria-hidden="true"><img src="/images/aoms-demo/dashboard.webp" alt="" width={2000} height={837} loading="lazy" decoding="async" /><span className="v-note">Demo build · synthetic data</span></div>;
+  if (kind === 'aoms-strips') return <div className="h4-vis v-aoms" aria-hidden="true">
     {[['FDB123', 'B738', 'HCMI → OMDB', 'ARR'], ['ETH456', 'DH8D', 'HCMI → HAAB', 'DEP'], ['UNO789', 'C130', 'HCMH → HCMI', 'ARR'], ['JET012', 'C208', 'HCMI → HCMH', 'DEP']].map(r => <div key={r[0]}>{r.map(c => <span key={c}>{c}</span>)}</div>)}
   </div>;
   if (kind === 'jry') return <div className="h4-vis v-phones" aria-hidden="true">
