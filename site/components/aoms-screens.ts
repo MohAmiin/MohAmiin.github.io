@@ -1,15 +1,28 @@
 import type { Screenshot } from './screenshot-gallery';
 
 // Approved AOMS screenshots only: taken from a labelled demo environment with synthetic flight
-// and movement data, stored in /public/images/aoms-demo/ (2047×1115 WebP). Leave entries out
+// and movement data, stored in /public/images/aoms-demo/ (2000×837 WebP, browser chrome cropped off).
+// Never use screenshots of the live system: they hold real flights and staff names. Leave entries out
 // until approved; the pages then show labelled "demo screenshot pending" frames instead.
-export const aomsDashboard: Screenshot | null = null;
+export const aomsDashboard: Screenshot | null = {
+  src: '/images/aoms-demo/dashboard.webp', title: 'Tower dashboard', width: 2000, height: 837,
+  alt: 'AOMS tower dashboard for Hargeisa Tower: arrivals, departures, aircraft on ground and night-stop counts, expected traffic and aircraft on ground',
+  caption: 'Tower dashboard: today’s arrivals and departures, aircraft on ground and night stops, expected traffic and aircraft waiting to depart.',
+};
 // e.g. { src: '/images/aoms-demo/dashboard.webp', title: 'Tower dashboard', alt: '…', caption: '…', width: 2047, height: 1115 }
 
-export const aomsWorkflows: Screenshot[] = [];
+// Development build (marked NON-PRODUCTION · DEVELOPMENT), synthetic demo aircraft such as STG501.
+export const aomsWorkflows: Screenshot[] = [
+  { src: '/images/aoms-demo/tower-board.webp', title: 'Tower board', width: 2000, height: 837,
+    alt: 'AOMS live tower board: expected arrivals, arrivals, departures, aircraft on ground, night stops and completed movements, with expected and on-ground lists',
+    caption: 'One live board for the whole position: expected, actual, grounded and completed traffic, with local and UTC time side by side.' },
+  { src: '/images/aoms-demo/logbook.webp', title: 'Tower logbook', width: 2000, height: 837,
+    alt: 'AOMS tower logbook: the confirmed active runway, search and filters, and a log entry recording the runway confirmation',
+    caption: 'A digital tower logbook: the active runway is confirmed for the duty session and logged automatically, and entries filter by shift, activity, category and priority.' },
+];
 
 // Views the gallery is designed around, shown as pending frames until screenshots are approved.
-export const aomsPlannedWorkflows = ['Arrival register', 'Departure register', 'Traffic statistics'];
+export const aomsPlannedWorkflows = ['Tower board', 'Tower logbook', 'Arrival register', 'Departure register', 'Traffic statistics'];
 
 // Workflow captions, describing what each demo screenshot is expected to show.
 export const aomsWorkflowCaptions: Record<string, string> = {

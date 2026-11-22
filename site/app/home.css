@@ -334,3 +334,9 @@ html.h4-intro .h4-intro.out{clip-path:inset(0 0 100% 0)}
 .h4-card:hover .v-phones .side:last-of-type{transform:translateY(2%) rotate(6deg) translateX(4%)}
 .v-phones .v-note{position:absolute;left:12px;bottom:10px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#C9958A}
 @media (max-width:1020px){.v-phones{aspect-ratio:4/3!important}.v-phones .ph{border-width:3px;border-radius:12px}}
+
+/* AOMS card: the real dashboard from the demo build (synthetic data) */
+.v-shot{background:#0E1424}
+.v-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0 0;transform:scale(1.04);transform-origin:0 0;transition:transform 1.2s var(--ease)}
+.h4-card:hover .v-shot img{transform:scale(1.1)}
+.v-shot .v-note{position:absolute;right:12px;bottom:10px;padding:5px 9px;border-radius:99px;background:rgba(14,20,36,.78);color:#E7ECF7;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
