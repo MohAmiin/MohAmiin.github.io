@@ -41,7 +41,7 @@ export const projects: Project[] = [
     category: 'Software',
     summary: 'A web platform that replaces paper tower logbooks and movement registers with one accountable, real-time record.',
     description: 'A web platform for the control tower that replaces paper logbooks and movement registers with one accountable, real-time record of tower operations.',
-    status: { label: 'Development complete for current scope', tone: 'done' },
+    status: { label: 'Development complete · awaiting ministry approval', tone: 'done' },
     stack: ['Next.js', 'Supabase', 'Vercel'],
     links: { caseStudy: '/projects/aoms' },
     featured: true,

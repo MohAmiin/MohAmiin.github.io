@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';import type { CSSProperties } from 'react';
 export const metadata: Metadata={title:'About | Mohamed Amiin',description:'Mohamed Amiin Abdirahman Hassan — developer, graphic designer and creator of digital products and business tools, with experience in finance and aviation.'};
-const software=[['Airport Operations Management System','Development complete for current scope','/projects/aoms'],['Jareeye Moto Delivery','Partially developed prototype — market validation in progress','/projects/jareeye'],['Websites & business tools','Responsive sites and workflow tools for organisations','/projects']];
+const software=[['Airport Operations Management System','Development complete · awaiting ministry approval','/projects/aoms'],['Jareeye Moto Delivery','Partially developed prototype — market validation in progress','/projects/jareeye'],['Websites & business tools','Responsive sites and workflow tools for organisations','/projects']];
 const qualifications=[['MBA (Accounting and Finance)','Amoud International University']];
 const financeSkills=['Accounting & financial reporting','Microsoft Excel · custom accounting forms','QuickBooks Online','QuickBooks Desktop (offline)','Odoo'];
 const i=(n:number)=>({'--i':n} as CSSProperties);
