@@ -11,7 +11,9 @@ export const aomsDashboard: Screenshot | null = {
 };
 // e.g. { src: '/images/aoms-demo/dashboard.webp', title: 'Tower dashboard', alt: '…', caption: '…', width: 2047, height: 1115 }
 
-// Development build (marked NON-PRODUCTION · DEVELOPMENT), synthetic demo aircraft such as STG501.
+// Tower board and logbook: development build (NON-PRODUCTION), synthetic aircraft such as STG501.
+// Registers and statistics: the real AOMS screens (Sept 2026 code) rendered with made-up traffic
+// (DEMO/STG/TST callsigns, 6O-DMx/STx/TCx registrations, Demo Air, Sample Aviation, Test Cargo).
 export const aomsWorkflows: Screenshot[] = [
   { src: '/images/aoms-demo/tower-board.webp', title: 'Tower board', width: 2000, height: 837,
     alt: 'AOMS live tower board: expected arrivals, arrivals, departures, aircraft on ground, night stops and completed movements, with expected and on-ground lists',
@@ -19,6 +21,15 @@ export const aomsWorkflows: Screenshot[] = [
   { src: '/images/aoms-demo/logbook.webp', title: 'Tower logbook', width: 2000, height: 837,
     alt: 'AOMS tower logbook: the confirmed active runway, search and filters, and a log entry recording the runway confirmation',
     caption: 'A digital tower logbook: the active runway is confirmed for the duty session and logged automatically, and entries filter by shift, activity, category and priority.' },
+  { src: '/images/aoms-demo/arrival-register.webp', title: 'Arrival register', width: 2000, height: 837,
+    alt: 'AOMS arrival register: made-up arrivals with strip and movement numbers, callsign, registration, operator, aircraft, origin, ATA in Zulu, POB, endurance, runway and status',
+    caption: 'Every arrival gets a strip and movement number from the database, with the actual time of arrival in Zulu, people on board, endurance, runway and a live status such as on ground or night stop.' },
+  { src: '/images/aoms-demo/departure-register.webp', title: 'Departure register', width: 2000, height: 837,
+    alt: 'AOMS departure register: made-up departures with strip, callsign, aircraft, destination, runway, ATD in Zulu, endurance and status',
+    caption: 'Departures carry their own strip numbers and filter by status, flight rules, destination and date; a departure stays incomplete until its actual time is recorded.' },
+  { src: '/images/aoms-demo/statistics.webp', title: 'Traffic statistics', width: 2000, height: 837,
+    alt: 'AOMS statistics for a reporting period: total movements, arrivals, departures and people on board, with a daily breakdown and CSV exports',
+    caption: 'Totals of movements, arrivals, departures and people on board for any period, broken down by day, operator and aircraft type, with CSV exports.' },
 ];
 
 // Views the gallery is designed around, shown as pending frames until screenshots are approved.
