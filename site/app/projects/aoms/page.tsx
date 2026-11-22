@@ -35,7 +35,7 @@ const i=(n:number)=>({'--i':n} as CSSProperties);
 
 export default function Aoms(){return <main className="container detail-page case-study">
   <header className="case-hero"><p className="eyebrow">CASE STUDY · PROJECT 01 / AVIATION SOFTWARE</p><h1 className="detail-title">Airport Operations <em>Management System.</em></h1><p className="detail-lead">A web platform for the control tower that replaces paper logbooks and movement registers with one accountable, real-time record of tower operations.</p>
-    <p className="case-status-pill"><span className="signal"/>Development complete for current scope.</p>
+    <p className="case-status-pill"><span className="signal"/>Development complete · awaiting ministry approval.</p>
     <dl className="case-facts">{facts.map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
     <figure className="case-visual"><ScreenFrame shot={aomsDashboard} pendingLabel="Demo screenshot pending · Tower dashboard" priority/><figcaption>Tower dashboard — today’s arrivals and departures, aircraft on ground, recent movements and predicted inbound traffic in one view. Demonstration environment, synthetic data.</figcaption></figure></header>
 
@@ -57,5 +57,5 @@ export default function Aoms(){return <main className="container detail-page cas
 
   <section className="case-section" data-reveal aria-labelledby="challenges"><p className="section-tag">06 / CHALLENGES</p><div><h2 id="challenges">Hard problems, <em>solved carefully.</em></h2><ol className="challenges">{challenges.map(([t,d],n)=><li data-reveal style={i(n)} key={t}><span className="case-card-no">0{n+1}</span><h3>{t}</h3><p>{d}</p></li>)}</ol></div></section>
 
-  <section className="case-section" data-reveal aria-labelledby="status"><p className="section-tag">07 / STATUS</p><div className="case-status"><h2 id="status">Development <em>complete</em> for current scope.</h2><p className="status">Case study of the software as built — not a claim of airport deployment or adoption</p><div className="actions"><a className="primary" href="/contact">Discuss AOMS ↗</a><a className="secondary" href="/projects">← All projects</a></div></div></section>
+  <section className="case-section" data-reveal aria-labelledby="status"><p className="section-tag">07 / STATUS</p><div className="case-status"><h2 id="status">Development <em>complete</em>, awaiting approval.</h2><p className="status">Operational use requires ministry approval, which is pending. This is a case study of the software as built, not a claim of airport deployment.</p><div className="actions"><a className="primary" href="/contact">Discuss AOMS ↗</a><a className="secondary" href="/projects">← All projects</a></div></div></section>
 </main>}

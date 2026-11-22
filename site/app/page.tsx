@@ -45,7 +45,7 @@ const offDuty = [
 
 // Per-project card look: code, colour, preview and short points. Unknown slugs get a default.
 const cardLook: Record<string, { code: string; tone: string; vis: string; points: string[] }> = {
-  aoms: { code: 'AOMS', tone: 'c-ox', vis: 'aoms', points: ['Built for a real control tower, by a controller', 'Arrival & departure registers, digital tower logbook', 'Next.js and Supabase', 'Sample data shown — not yet in operational use'] },
+  aoms: { code: 'AOMS', tone: 'c-ox', vis: 'aoms', points: ['Built for a real control tower, by a controller', 'Arrival & departure registers, digital tower logbook', 'Next.js and Supabase', 'Awaiting ministry approval before operational use'] },
   jareeye: { code: 'JRY', tone: 'c-ink', vis: 'jry', points: ['Customers find nearby approved riders', 'Mobile app prototype', 'Testing the market in Hargeisa'] },
   websites: { code: 'WEB', tone: 'c-cream', vis: 'web', points: ['Delivered through Kodaro', 'Fast, accessible, built to be found', 'Portfolios, company sites, landing pages'] },
   'excel-tools': { code: 'XLS', tone: 'c-deep', vis: 'xl', points: ['Business and personal finance managers', 'Somali instructions, English labels', 'Built on an accounting background'] },
