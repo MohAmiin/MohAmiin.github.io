@@ -323,3 +323,14 @@ html.h4-intro .h4-intro.out{clip-path:inset(0 0 100% 0)}
   .h4-chips li{opacity:1;transform:none}.h4-js .h4-photo{clip-path:none}.h4-card{position:relative;top:0}
   html.h4-intro .h4-intro{display:none}.h4-cur,.h4-ring{display:none}
 }
+
+/* Jareeye card: three real app screens (prototype, sample data) */
+.v-phones{display:flex;align-items:center;justify-content:center;gap:2%;padding:5% 4% 9%;background:radial-gradient(80% 70% at 50% 40%,#4A1820,#2A0E12 70%)}
+.v-phones .ph{height:auto;border-radius:18px;border:5px solid #0E0B0A;box-shadow:0 24px 40px -20px rgba(0,0,0,.8);background:#0E0B0A;transition:transform .8s var(--ease)}
+.v-phones .side{width:27%;transform:translateY(6%) rotate(-4deg)}
+.v-phones .side:last-of-type{transform:translateY(6%) rotate(4deg)}
+.v-phones .mid{width:31%;z-index:1}
+.h4-card:hover .v-phones .side{transform:translateY(2%) rotate(-6deg) translateX(-4%)}
+.h4-card:hover .v-phones .side:last-of-type{transform:translateY(2%) rotate(6deg) translateX(4%)}
+.v-phones .v-note{position:absolute;left:12px;bottom:10px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#C9958A}
+@media (max-width:1020px){.v-phones{aspect-ratio:4/3!important}.v-phones .ph{border-width:3px;border-radius:12px}}
