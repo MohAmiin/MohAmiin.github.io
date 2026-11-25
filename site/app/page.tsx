@@ -226,7 +226,7 @@ export default function Home() {
             <a className="h4-btn ghost" href={whatsApp} target="_blank" rel="noopener noreferrer">WhatsApp <span className="a" aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a>
             <a className="h4-btn ghost" href={linkedIn} target="_blank" rel="noopener noreferrer">LinkedIn <span className="a" aria-hidden="true">↗</span><span className="sr-only"> (opens in a new tab)</span></a>
             <a className="h4-btn ghost" href="/contact">Contact form <span className="a" aria-hidden="true">→</span></a>
-            <a className="h4-btn ghost" href="/cv.pdf" download>Download CV <span className="a" aria-hidden="true">↓</span></a>
+            <a className="h4-btn ghost" href="https://cv.mohamedamiin.com">View full CV <span className="a" aria-hidden="true">↗</span></a>
             <div className="h4-barcode" aria-hidden="true" />
           </div>
         </div>
