@@ -45,7 +45,7 @@ export default function HomeHeader() {
         <nav className="h4-links" aria-label="Primary navigation">{links.map(([h, l]) => <ScrambleLink key={h} href={h} label={l} />)}</nav>
         <div className="h4-right">
           <ThemeToggle />
-          <a href="/cv.pdf" download className="h4-btn h4-btn-ox">Download CV <span className="a" aria-hidden="true">↓</span></a>
+          <a href="https://cv.mohamedamiin.com" className="h4-btn h4-btn-ox">View full CV <span className="a" aria-hidden="true">↗</span></a>
           <button type="button" className="h4-burger" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="h4-mobile" onClick={() => setOpen(o => !o)}><span /><span /></button>
         </div>
       </div>
@@ -54,7 +54,7 @@ export default function HomeHeader() {
       {links.map(([h, l], i) => <a key={h} href={h} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>{l} <small>{String(i + 1).padStart(2, '0')}</small></a>)}
       <a href="/library" tabIndex={open ? 0 : -1}>My Library <small>→</small></a>
       <a href="/films" tabIndex={open ? 0 : -1}>My Films <small>→</small></a>
-      <a href="/cv.pdf" download tabIndex={open ? 0 : -1}>Download CV <small>↓</small></a>
+      <a href="https://cv.mohamedamiin.com" tabIndex={open ? 0 : -1}>View full CV <small>↗</small></a>
     </nav>
   </>;
 }

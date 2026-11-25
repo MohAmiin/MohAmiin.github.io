@@ -1,6 +1,6 @@
 # Mohamed Amiin — aviation portfolio redesign
 
-This is a **separate Next.js static-export prototype** inside the existing GitHub Pages repository. The original root `index.html`, `CNAME`, `preview.jpg` and `cv.pdf` remain unchanged. No automatic deployment is configured.
+This is a **separate Next.js static-export prototype** inside the existing GitHub Pages repository. The original root `index.html`, `CNAME`, `preview.jpg` remain unchanged (the old public `cv.pdf` was removed; see below). No automatic deployment is configured.
 
 ## Local preview
 
@@ -14,7 +14,7 @@ Visit http://localhost:3000. Run `npm run build` to generate static files in `si
 
 ## Important before publication
 
-- `/cv.pdf` assumes the CV is placed in `site/public/cv.pdf` for production. The original root CV has not been copied or deleted. Copy the existing CV into `site/public` during the final integration.
+- The CV is not stored in this public repository. "View full CV" links go to the password-protected portal at https://cv.mohamedamiin.com (a separate private Vercel project). The deploy workflow fails if a cv.pdf ever ends up in the build.
 - Links to the current site's contact section are intentional placeholders; migrate actual contact details after review.
 - English/Arabic toggle and light theme from the original site have **not yet been ported**.
 - Project descriptions are prototype summaries; verify exact statuses before launch.

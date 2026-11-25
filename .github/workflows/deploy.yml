@@ -41,11 +41,12 @@ jobs:
       - name: Verify export contents
         run: |
           set -e
-          for f in index.html 404.html cv.pdf favicon.ico icon.png apple-icon.png about/index.html aviation/index.html projects/index.html projects/aoms/index.html relax/index.html contact/index.html; do
+          for f in index.html 404.html favicon.ico icon.png apple-icon.png about/index.html aviation/index.html projects/index.html projects/aoms/index.html relax/index.html contact/index.html; do
             test -s "out/$f" || { echo "Missing out/$f"; exit 1; }
           done
           test -d out/_next/static || { echo "Missing out/_next/static"; exit 1; }
-          test "$(head -c 4 out/cv.pdf)" = "%PDF" || { echo "cv.pdf is not a PDF"; exit 1; }
+          # The CV is never published here; it lives behind the password portal at cv.mohamedamiin.com.
+          test ! -e out/cv.pdf || { echo "cv.pdf must not be published"; exit 1; }
           # Every local /images/... reference in the HTML must exist in the export.
           missing=0
           for img in $(grep -rhoE '"/images/[^"?\\]+' --include='*.html' out | tr -d '"' | sort -u); do
