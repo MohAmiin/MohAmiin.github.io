@@ -21,6 +21,6 @@ export default function SiteHeader() {
       <OffDutyMenu variant="topbar" />
       <Link href="/contact" aria-current={cur('/contact')}>Contact</Link>
     </nav>
-    <div className="nav-actions"><ThemeToggle /><a className="nav-cv" href="/cv.pdf" download>Download CV ↗</a></div>
+    <div className="nav-actions"><ThemeToggle /><a className="nav-cv" href="https://cv.mohamedamiin.com">View full CV ↗</a></div>
   </header>;
 }
